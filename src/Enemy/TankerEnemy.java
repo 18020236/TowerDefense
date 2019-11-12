@@ -13,9 +13,9 @@ public class TankerEnemy extends Enemy{
         this.gc=gc;
         pos = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
         health = 15;
-        speed = (float) 1;
-        armor = 13;
-        prize = 25;
+        speed = (float) 0.6;
+        armor = 4;
+        prize = 80;
         image= ImageProcessing.splits(15,12);
         for(int i = 0; i < 4; i++)
         {

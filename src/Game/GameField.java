@@ -1,14 +1,16 @@
 package Game;
 
 
-import Enemy.*;
+import Enemy.Enemy;
+import Enemy.GunShip;
+import Enemy.NormalEnemy;
+import Enemy.TankerEnemy;
 import Initialization.Background;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -17,6 +19,8 @@ public class GameField extends AnimationTimer {
     protected GraphicsContext gc;
     protected Stage stage;
     private int round;
+
+    private final int startingLevel = 1;
 
     public GameField(GraphicsContext gc) {
         this.gc = gc;
@@ -49,7 +53,7 @@ public class GameField extends AnimationTimer {
 
     public void update() {
         if (!enemyQ.isEmpty()) {
-            if (round % 20 == 0) {
+            if (round % 30 == 0) {
                 enemyList.add(enemyQ.poll());
             }
         }
@@ -59,11 +63,6 @@ public class GameField extends AnimationTimer {
         for (int i = 0; i < enemyList.size(); i++) {
             enemyList.get(i).update(road.getMap());
         }
-        Collections.sort(enemyList, (Enemy a, Enemy b) -> {
-            if (a.getDangerousLevel() > b.getDangerousLevel()) return -1;
-            else if (a.getDangerousLevel() < b.getDangerousLevel()) return 1;
-            return 0;
-        });
 
     }
 

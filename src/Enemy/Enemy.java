@@ -7,12 +7,14 @@ import javafx.scene.image.Image;
 import java.util.ArrayList;
 
 public abstract class Enemy extends GameEntity {
-    protected int health;
+    protected boolean alive = true;
+    protected double health;
     protected float speed;
     protected int armor;
     protected int prize;
     protected double dangerousLevel;
     protected ArrayList<Image> images = new ArrayList<>();
+    protected ArrayList<Image> gunShipImages = new ArrayList<>();
 
     public double getDangerousLevel()
     {
@@ -122,29 +124,69 @@ public abstract class Enemy extends GameEntity {
         }
     }
 
+    public void takeDamage(double damage){
+        health =  health - damage/armor;
+        if(health <= 0){
+            alive = false;
+        }
+    }
+
+    public boolean isAtEndPoint() {
+        if (pos.x >= Config.TILE_SIZE * Config.HORIZONTAL) return true;
+        return false;
+    }
+
+    public double getHealth() {
+        return health;
+    }
+
+    public float getSpeed() {
+        return speed;
+    }
+
+    public int getArmor() {
+        return armor;
+    }
+
+    public int getPrize() {
+        return prize;
+    }
+
     public void update(int map[][])
     {
         move(map);
         dangerousLevel += speed;
     }
 
-    public void draw()
-    {
+
+    public void drawByEnemyType(ArrayList<Image> images){
         if(check.equals("TURN_RIGHT"))
         {
             gc.drawImage(images.get(0),pos.x,pos.y,96,96);
         }
-        if(check.equals("TURN_LEFT"))
+        else if(check.equals("TURN_LEFT"))
         {
             gc.drawImage(images.get(2),pos.x,pos.y,96,96);
         }
-        if(check.equals("TURN_UP"))
+        else if(check.equals("TURN_UP"))
         {
             gc.drawImage(images.get(3),pos.x,pos.y,96,96);
         }
-        if(check.equals("TURN_DOWN"))
+        else if(check.equals("TURN_DOWN"))
         {
             gc.drawImage(images.get(1),pos.x,pos.y,96,96);
         }
     }
+
+
+    public void draw()
+    {
+        if (this instanceof GunShip == false){
+            drawByEnemyType(images);
+        }
+        if (this instanceof GunShip == true){
+            drawByEnemyType(gunShipImages);
+        }
+    }
+
 }
