@@ -48,7 +48,7 @@ public class GameField extends AnimationTimer {
     }
 
     private Background road;
-    private Queue<Enemy> enemyQ;
+    private static Queue<Enemy> enemyQ;
     private ArrayList<Enemy> enemyList;
 
     public void update() {

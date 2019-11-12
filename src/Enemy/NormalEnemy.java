@@ -11,7 +11,7 @@ public class NormalEnemy extends Enemy {
     public NormalEnemy( GraphicsContext gc)
     {
         this.gc = gc;
-
+        name = "Normal";
         pos = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
         health = 2;
         speed = (float) 0.8;

@@ -13,6 +13,7 @@ public abstract class Enemy extends GameEntity {
     protected int armor;
     protected int prize;
     protected double dangerousLevel;
+    protected String name = "DEFAULT";
     protected ArrayList<Image> images = new ArrayList<>();
     protected ArrayList<Image> gunShipImages = new ArrayList<>();
 
@@ -150,6 +151,10 @@ public abstract class Enemy extends GameEntity {
 
     public int getPrize() {
         return prize;
+    }
+
+    public String getName(){
+        return name;
     }
 
     public void update(int map[][])

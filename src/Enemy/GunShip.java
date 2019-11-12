@@ -8,6 +8,7 @@ import javafx.scene.canvas.GraphicsContext;
 public class GunShip extends Enemy{
     public GunShip( GraphicsContext gc)
     {
+        name = "GunShip";
         this.gc=gc;
         pos = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
         health = 3;

@@ -9,7 +9,7 @@ public class SmallerEnemy extends Enemy {
     public SmallerEnemy( GraphicsContext gc)
     {
         this.gc = gc;
-
+        name = "Smaller";
         pos = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
         health = 5;
         speed = (float) 1;

@@ -11,6 +11,7 @@ public class TankerEnemy extends Enemy{
     public TankerEnemy( GraphicsContext gc)
     {
         this.gc=gc;
+        name = "Tanker";
         pos = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
         health = 15;
         speed = (float) 0.6;
