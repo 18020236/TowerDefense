@@ -30,10 +30,10 @@ public abstract class Enemy extends GameEntity {
     protected String check = new String("TURN_RIGHT");
     protected void check(int map[][])
     {
-        int yLocation1 =  (int)((Math.round(pos.y)+32)/ Config.LENGTH_IMAGE);
-        int yLocation2 =  (int)((Math.round(pos.y)+31)/ Config.LENGTH_IMAGE);
-        int xLocation1 =  (int)((Math.round(pos.x)+32)/ Config.LENGTH_IMAGE);
-        int xLocation2 =  (int)((Math.round(pos.x)+31)/ Config.LENGTH_IMAGE);
+        int yLocation1 =  (int)((Math.round(pos.y)+48)/ Config.LENGTH_IMAGE);
+        int yLocation2 =  (int)((Math.round(pos.y)+47)/ Config.LENGTH_IMAGE);
+        int xLocation1 =  (int)((Math.round(pos.x)+48)/ Config.LENGTH_IMAGE);
+        int xLocation2 =  (int)((Math.round(pos.x)+47)/ Config.LENGTH_IMAGE);
 
         //checkRight
         if(direction==Direction.RIGHT)
@@ -132,19 +132,19 @@ public abstract class Enemy extends GameEntity {
     {
         if(check.equals("TURN_RIGHT"))
         {
-            gc.drawImage(images.get(0),pos.x,pos.y);
+            gc.drawImage(images.get(0),pos.x,pos.y,96,96);
         }
         if(check.equals("TURN_LEFT"))
         {
-            gc.drawImage(images.get(2),pos.x,pos.y);
+            gc.drawImage(images.get(2),pos.x,pos.y,96,96);
         }
         if(check.equals("TURN_UP"))
         {
-            gc.drawImage(images.get(3),pos.x,pos.y);
+            gc.drawImage(images.get(3),pos.x,pos.y,96,96);
         }
         if(check.equals("TURN_DOWN"))
         {
-            gc.drawImage(images.get(1),pos.x,pos.y);
+            gc.drawImage(images.get(1),pos.x,pos.y,96,96);
         }
     }
 }

@@ -26,6 +26,7 @@ public class GameStage {
 
         Scene theScene = new Scene( root );
         stage.setScene( theScene );
+        stage.setFullScreen(true);
 
         Canvas canvas = new Canvas( Config.WIDTH, Config.HEIGHT );
         root.getChildren().add( canvas );
