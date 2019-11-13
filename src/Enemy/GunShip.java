@@ -10,7 +10,7 @@ public class GunShip extends Enemy{
     {
         name = "GunShip";
         this.gc=gc;
-        pos = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
+        position = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
         health = 3;
         speed = (float) 3.2;
         armor = 1;

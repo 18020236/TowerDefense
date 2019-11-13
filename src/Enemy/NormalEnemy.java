@@ -12,7 +12,7 @@ public class NormalEnemy extends Enemy {
     {
         this.gc = gc;
         name = "Normal";
-        pos = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
+        position = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
         health = 2;
         speed = (float) 0.8;
         armor = 8;

@@ -10,7 +10,7 @@ public class SmallerEnemy extends Enemy {
     {
         this.gc = gc;
         name = "Smaller";
-        pos = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
+        position = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
         health = 5;
         speed = (float) 1;
         armor = 1;

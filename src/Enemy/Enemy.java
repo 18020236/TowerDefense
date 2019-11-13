@@ -33,10 +33,10 @@ public abstract class Enemy extends GameEntity {
     protected String check = new String("TURN_RIGHT");
     protected void check(int map[][])
     {
-        int yLocation1 =  (int)((Math.round(pos.y)+48)/ Config.LENGTH_IMAGE);
-        int yLocation2 =  (int)((Math.round(pos.y)+47)/ Config.LENGTH_IMAGE);
-        int xLocation1 =  (int)((Math.round(pos.x)+48)/ Config.LENGTH_IMAGE);
-        int xLocation2 =  (int)((Math.round(pos.x)+47)/ Config.LENGTH_IMAGE);
+        int yLocation1 =  (int)((Math.round(position.y)+48)/ Config.LENGTH_IMAGE);
+        int yLocation2 =  (int)((Math.round(position.y)+47)/ Config.LENGTH_IMAGE);
+        int xLocation1 =  (int)((Math.round(position.x)+48)/ Config.LENGTH_IMAGE);
+        int xLocation2 =  (int)((Math.round(position.x)+47)/ Config.LENGTH_IMAGE);
 
         //checkRight
         if(direction==Direction.RIGHT)
@@ -102,25 +102,25 @@ public abstract class Enemy extends GameEntity {
 
         if(check.equals("TURN_RIGHT"))
         {
-            pos.x=pos.x+speed;
+            position.x= position.x+speed;
             direction=Direction.RIGHT;
         }
 
         if(check.equals("TURN_LEFT"))
         {
-            pos.x=pos.x-speed;
+            position.x= position.x-speed;
             direction=Direction.LEFT;
         }
 
         if(check.equals("TURN_UP"))
         {
-            pos.y=pos.y-speed;
+            position.y= position.y-speed;
             direction=Direction.UP;
         }
 
         if(check.equals("TURN_DOWN"))
         {
-            pos.y=pos.y+speed;
+            position.y= position.y+speed;
             direction=Direction.DOWN;
         }
     }
@@ -133,7 +133,7 @@ public abstract class Enemy extends GameEntity {
 //    }
 
     public boolean isAtEndPoint() {
-        if (pos.x >= Config.TILE_SIZE * Config.HORIZONTAL - 60) return true;
+        if (position.x >= Config.TILE_SIZE * Config.HORIZONTAL - 60) return true;
         return false;
     }
 
@@ -172,19 +172,19 @@ public abstract class Enemy extends GameEntity {
     public void drawByEnemyType(ArrayList<Image> images){
         if(check.equals("TURN_RIGHT"))
         {
-            gc.drawImage(images.get(0),pos.x,pos.y,96,96);
+            gc.drawImage(images.get(0), position.x, position.y,96,96);
         }
         else if(check.equals("TURN_LEFT"))
         {
-            gc.drawImage(images.get(2),pos.x,pos.y,96,96);
+            gc.drawImage(images.get(2), position.x, position.y,96,96);
         }
         else if(check.equals("TURN_UP"))
         {
-            gc.drawImage(images.get(3),pos.x,pos.y,96,96);
+            gc.drawImage(images.get(3), position.x, position.y,96,96);
         }
         else if(check.equals("TURN_DOWN"))
         {
-            gc.drawImage(images.get(1),pos.x,pos.y,96,96);
+            gc.drawImage(images.get(1), position.x, position.y,96,96);
         }
     }
 
