@@ -2,6 +2,7 @@ package Enemy;
 
 import javafx.scene.canvas.GraphicsContext;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -13,12 +14,14 @@ public class EnemyGenerator {
 
 
     public EnemyGenerator(int level){
-        this.level = level - 1;
+        this.level = level;
     }
 
     int[][] EnemyStream = {
             //{smaller, normal, gunship, tanker, boss}
-            {2,1,0,0,0},
+            //{smaller, gunship, normal, tanker, boss} (test version)
+//            {2,1,0,0,0},
+            {20,8,10,10,3},
             {5,2,0,0,0},
             {6,2,1,0,0},
             {6,3,2,2,1},
@@ -40,6 +43,11 @@ public class EnemyGenerator {
             }
         }
         return cListToAppend;
+    }
+
+    public void RandomizeEnemyQueue()
+    {
+        Collections.shuffle((LinkedList<Enemy>) EnemyQueue);
     }
 
     public void createEnemyQueue(GraphicsContext gc){

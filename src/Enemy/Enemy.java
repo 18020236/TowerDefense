@@ -125,16 +125,20 @@ public abstract class Enemy extends GameEntity {
         }
     }
 
-    public void takeDamage(double damage){
-        health =  health - damage/armor;
-        if(health <= 0){
-            alive = false;
-        }
-    }
+//    public void takeDamage(double damage){
+//        health =  health - damage/armor;
+//        if(health <= 0){
+//            alive = false;
+//        }
+//    }
 
     public boolean isAtEndPoint() {
-        if (pos.x >= Config.TILE_SIZE * Config.HORIZONTAL) return true;
+        if (pos.x >= Config.TILE_SIZE * Config.HORIZONTAL - 60) return true;
         return false;
+    }
+
+    public boolean isAlive() {
+        return alive;
     }
 
     public double getHealth() {
@@ -162,6 +166,7 @@ public abstract class Enemy extends GameEntity {
         move(map);
         dangerousLevel += speed;
     }
+
 
 
     public void drawByEnemyType(ArrayList<Image> images){
