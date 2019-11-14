@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f977c6c-fd50-47b8-93ee-ae6592a09174" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/TDefense/Initialization/Rotate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TDefense/META-INF/TDefense.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/NormalTower.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Initialization/Rotate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tower/NormalTower.java" afterDir="false" />
+    <list default="true" id="1b29c756-23d0-4282-abcb-61436aee5a65" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Bullet/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Bullet/Bullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Bullet/NormalBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Bullet/NormalBullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/Tower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/Tower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/Tower.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +32,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Game" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
