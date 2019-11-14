@@ -1,6 +1,4 @@
 package Game;
-
-
 import Enemy.Enemy;
 import Enemy.EnemyGenerator;
 import Initialization.Background;
@@ -12,25 +10,18 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-//import java.awt.*;
-
 public class GameField extends AnimationTimer {
-
     protected GraphicsContext gc;
-
     private final int startingLevel = 1;
     protected AnchorPane root = new AnchorPane();
-
     public GameField(GraphicsContext gc, AnchorPane root) {
         this.gc = gc;
         this.root = root;
         road = new Background(gc);
-
         restartGame();
 
 //        root.getChildren().add(GameField.text("GAME OVER", 200, 300));
@@ -61,7 +52,6 @@ public class GameField extends AnimationTimer {
     static long tickCount = 0;
     public static boolean gameOver = false;
     private static int currentLevel = 0;
-
     EnemyGenerator generator;
 
     public void addEnemiesToActiveEnemyQueue(){
@@ -76,7 +66,6 @@ public class GameField extends AnimationTimer {
     public void restartGame() {
         currentLevel = startingLevel;
         Player.getPlayer().reset();
-
         waveIsInProgress = true;
         enemyQueue = new LinkedList<Enemy>();
         activeEnemyQueue = new LinkedList<Enemy>();
