@@ -64,9 +64,9 @@ public class Background extends GameEntity{
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 25; j++) {
                 int index = map[i][j];
-                gc.drawImage(images[index / 8][index % 8 + 10], j * Config.LENGTH_IMAGE, i * Config.LENGTH_IMAGE);
-                gc.fillRect(j*Config.LENGTH_IMAGE, i*Config.LENGTH_IMAGE, 1, Config.LENGTH_IMAGE);
-                gc.fillRect(j*Config.LENGTH_IMAGE,i*Config.LENGTH_IMAGE, Config.LENGTH_IMAGE,1);
+                gc.drawImage(images[index / 8][index % 8 + 10], j * Config.TILE_SIZE, i * Config.TILE_SIZE, Config.TILE_SIZE, Config.TILE_SIZE);
+                gc.fillRect(j*Config.LENGTH_IMAGE, i*Config.LENGTH_IMAGE, 0.3, Config.LENGTH_IMAGE);
+                gc.fillRect(j*Config.LENGTH_IMAGE,i*Config.LENGTH_IMAGE, Config.LENGTH_IMAGE,0.3);
             }
         }
     }

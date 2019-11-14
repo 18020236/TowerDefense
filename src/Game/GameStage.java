@@ -23,7 +23,7 @@ public class GameStage {
 
         AnchorPane root = new AnchorPane();
 
-        Scene theScene = new Scene( root );
+        Scene theScene = new Scene( root , Config.WIDTH, Config.HEIGHT);
         stage.setScene( theScene );
         Canvas canvas = new Canvas( Config.WIDTH, Config.HEIGHT );
         root.getChildren().add( canvas );

@@ -12,7 +12,7 @@ public class SmallerEnemy extends Enemy {
         name = "Smaller";
         position = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
         health = 5;
-        speed = (float) 1;
+        speed = (float) 0.5;
         armor = 1;
         prize = 20;
         image = ImageProcessing.splits(17,10);
