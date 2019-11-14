@@ -4,10 +4,10 @@ package Game;
 import Enemy.Enemy;
 import Enemy.EnemyGenerator;
 import Initialization.Background;
+import Tower.*;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.stage.Stage;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -45,13 +45,16 @@ public class GameField extends AnimationTimer {
 //        }
 
         enemyList = new ArrayList<>();
-
+        towerList = new ArrayList<>();
+        // HOANG REVIEW
+        towerList.add(new NormalTower(gc, enemyList));
     }
 
     private Background road;
     private static Queue<Enemy> enemyQueue = new LinkedList<Enemy>();
     public  static Queue<Enemy> activeEnemyQueue = new LinkedList<Enemy>();
     private ArrayList<Enemy> enemyList;
+    private ArrayList<Tower> towerList;
     private final int enemySpawnDelay = 20;
     private static boolean waveIsInProgress = true;
     static long tickCount = 0;
@@ -59,7 +62,6 @@ public class GameField extends AnimationTimer {
     private static int currentLevel = 0;
 
     EnemyGenerator generator;
-
 
     public void addEnemiesToActiveEnemyQueue(){
         tickCount++;
@@ -111,6 +113,9 @@ public class GameField extends AnimationTimer {
     }
 
     public void update() {
+        for(int i = 0 ;i < towerList.size();i++) {
+            towerList.get(i).update();
+        }
 //        if (!enemyQ.isEmpty()) {
 //            if (round % 30 == 0) {
 //                enemyList.add(enemyQ.poll());
@@ -143,10 +148,10 @@ public class GameField extends AnimationTimer {
             for (Enemy s : activeEnemyQueue) {
                 s.draw();
             }
+            for(int i = 0 ; i< towerList.size();i++) {
+                towerList.get(i).draw();
+            }
         }
-//        for (Enemy s : activeEnemyQueue) {
-//            s.draw();
-//        }
     }
 
     @Override
