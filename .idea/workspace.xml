@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b29c756-23d0-4282-abcb-61436aee5a65" name="Default Changelist" comment="">
+    <list default="true" id="9f977c6c-fd50-47b8-93ee-ae6592a09174" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/BossEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/BossEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/Enemy$Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/Enemy$Direction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/GunShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/GunShip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/NormalEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/SmallerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/SmallerEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/TankerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/TankerEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Game/GameStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Game/GameStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/BossEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/BossEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/GunShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/GunShip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/NormalEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/SmallerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/SmallerEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/TankerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/TankerEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/GameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Initialization/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Initialization/Config.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +49,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Game" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Desktop/java-tower-defense-master" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -39,6 +57,9 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Game" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\chung\OneDrive\Desktop\Giang\src\Initialization" />
       <recent name="C:\Users\Admin\IdeaProjects\Game\src\Initialization" />
