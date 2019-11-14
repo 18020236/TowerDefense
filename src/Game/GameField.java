@@ -6,12 +6,12 @@ import Enemy.EnemyGenerator;
 import Initialization.Background;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
-import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -22,16 +22,18 @@ import java.util.Queue;
 public class GameField extends AnimationTimer {
 
     protected GraphicsContext gc;
-    protected Stage stage;
-    private int round;
 
     private final int startingLevel = 1;
+    protected AnchorPane root = new AnchorPane();
 
-    public GameField(GraphicsContext gc) {
+    public GameField(GraphicsContext gc, AnchorPane root) {
         this.gc = gc;
+        this.root = root;
         road = new Background(gc);
 
         restartGame();
+
+//        root.getChildren().add(GameField.text("GAME OVER", 200, 300));
 
 //        enemyQ = new LinkedList<>();
 //
@@ -57,12 +59,10 @@ public class GameField extends AnimationTimer {
     private final int enemySpawnDelay = 20;
     private static boolean waveIsInProgress = true;
     static long tickCount = 0;
-    private boolean gameOver = false;
+    public static boolean gameOver = false;
     private static int currentLevel = 0;
 
     EnemyGenerator generator;
-    Font font ;
-    Text noti = new Text();
 
     public void addEnemiesToActiveEnemyQueue(){
         tickCount++;
@@ -110,6 +110,7 @@ public class GameField extends AnimationTimer {
 
             if(s.isAtEndPoint()){
                 Player.getPlayer().decreaseLife();
+                System.out.println(Player.getPlayer().getLives());
                 enemiesToRemove.add(s);
             }
         }
@@ -143,7 +144,7 @@ public class GameField extends AnimationTimer {
 //        }
 
         if(Player.getPlayer().getLives() <= 0){
-            System.out.println(Player.getPlayer().getLives() + "het mau cmnr");
+            System.out.println(Player.getPlayer().getLives() + " het mau cmnr");
             gameOver = true;
         }
 
@@ -151,63 +152,20 @@ public class GameField extends AnimationTimer {
 //            enemyList.get(i).update(road.getMap());
 //        }
     }
-
-//    private void drawMapandOverlay(GameContainer container, Graphics g){
-//        //draw map and background
-//
-//        //draw the hearts
-//        for(int x = 0 ; x < Player.getPlayer().getLives() ; x++){
-//            if(x<8)
-//                HeartGraphic.draw(x * (5 + HeartGraphic.getWidth()), currentMap.getHeightOfMap() * currentMap.getPixelSize() + 5);
-//            else{
-//                HeartGraphic.draw((x - 8) * (5 + HeartGraphic.getWidth()), currentMap.getHeightOfMap() * currentMap.getPixelSize() + 15 + HeartGraphic.getHeight());
-//            }
-//        }
-//
-//        //drawing buttons and overlays
-//
-//        //draw sell and upgrade buttons
-//        int xCorner = currentMap.getWidthInPixel() +towerGraphicXStart + ((4)%2)*towerGraphicXOffset;
-//        int yCorner = towerGraphicYStart + (4/2)*towerGraphicYOffset;
-//        SellButtonGraphic.drawCentered(xCorner +towerButtonWidth/2,yCorner +towerButtonHeight/2);
-//
-//        xCorner = currentMap.getWidthInPixel() +towerGraphicXStart + ((5)%2)*towerGraphicXOffset;
-//        yCorner = towerGraphicYStart + (5/2)*towerGraphicYOffset;
-//        UpgradeButtonGraphic.drawCentered(xCorner +towerButtonWidth/2,yCorner +towerButtonHeight/2);
-//
-//        // drawing/updating the currency and level
-//        ttf.drawString( CurrencyGraphic.getWidth() + 5, (container.getHeight() - 40), "" + Player.getPlayer().getCredits());
-//        ttf.drawString(currentMap.getWidthInPixel() - 48, currentMap.getHeightInPixel() + 15, currentLevel + "");
-//
-//        //if the mouse is on the map, snap to map grid
-//        if(mouseOnMap(Mouse.getX(),container.getHeight()-Mouse.getY())){
-//            Image img;
-//            switch(selectedTower){
-//                case -3:
-//                    img = SellSelectGraphic;
-//                    break;
-//                case -2:
-//                    img = UpgradeSelectGraphic;
-//                    break;
-//                case -1:
-//                    img = TileSelectGraphic;
-//                    break;
-//                case 0:
-//                    img = BasicTowerGraphic;
-//                    break;
-//                case 1:
-//                    img =  FreezeTowerGraphic;
-//                    break;
-//                case 2:
-//                    img = SniperTowerGraphic;
-//                    break;
-//                default:
-//                    img = TileSelectGraphic;
-//                    break;
-//            }
-//            img.drawCentered(getClosestTileCenter(Mouse.getX()), container.getHeight() - getClosestTileCenter(Mouse.getY()));
-//        }
-//    }
+    public void drawText(String str, int size, double x,  double y){
+        TextFlow text_flow = new TextFlow();
+        // create a font
+        Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, size);
+        // create text
+        Text text = new Text(str);
+        // set the text color
+        text.setFill(Color.BLACK);
+        // set font of the text
+        text.setFont(font);
+        text.setX(x);
+        text.setY(y);
+        root.getChildren().add(text);
+    }
 
 
     public void draw() {
@@ -217,21 +175,14 @@ public class GameField extends AnimationTimer {
                 s.draw();
             }
         }
+        //draw health, wave,
+//        root.getChildren().add(GameField.text("GAME OVER", 200, 300));
+        drawText("LIVES: " + Player.getPlayer().getLives(),20, 100, 300);
+        drawText("CASH: " + Player.getPlayer().getCredits(),20, 300, 300);
+        drawText("LEVEL: " + currentLevel,20, 500, 300);
 
         if(gameOver){
-            TextFlow text_flow = new TextFlow();
-            // create text
-            Text noti = new Text("GAME OVER\n");
-            // set the text color
-            noti.setFill(Color.BLACK);
-            // create a font
-            Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, 40);
-            // set font of the text
-            noti.setFont(font);
-            // set text
-            text_flow.getChildren().add(noti);
-            // set line spacing
-            text_flow.setLineSpacing(20.0f);
+            drawText("GAME OVER",40, 200, 300);
         }
 //        for (Enemy s : activeEnemyQueue) {
 //            s.draw();
@@ -243,4 +194,5 @@ public class GameField extends AnimationTimer {
         update();
         draw();
     }
+
 }
