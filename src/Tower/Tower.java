@@ -7,9 +7,11 @@ import Game.Player;
 import com.sun.javafx.geom.Vec2d;
 
 public class Tower extends GameEntity {
+    public enum type{
+        NORMAL, SNIPER, MACHINEGUN;
+    }
     protected int buyingCost;
     protected int refundValue;
-    protected double speed;
     protected double range;
     protected double power;
     protected Bullet bullet;
@@ -17,8 +19,8 @@ public class Tower extends GameEntity {
     protected double reloadTime;
     private long lastAttackTime;
     private double angleOfRotation;
+    protected type towerType;
     private double bulletTravelDistanceMaximum;
-
     public Tower(Vec2d pos) {
         this.position = pos;
         this.lastAttackTime = 0;

@@ -1,7 +1,9 @@
 package Game;
+
 import Enemy.Enemy;
 import Enemy.EnemyGenerator;
 import Initialization.Background;
+import Tower.Tower;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.AnchorPane;
@@ -10,6 +12,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -29,6 +32,7 @@ public class GameField extends AnimationTimer {
     private static Queue<Enemy> enemyQueue = new LinkedList<Enemy>();
     public  static Queue<Enemy> activeEnemyQueue = new LinkedList<Enemy>();
     private ArrayList<Enemy> enemyList;
+    private static ArrayList<Tower> towerList = new ArrayList<Tower>();
     private final int enemySpawnDelay = 20;
     private static boolean waveIsInProgress = true;
     static long tickCount = 0;
@@ -128,7 +132,17 @@ public class GameField extends AnimationTimer {
         root.getChildren().add(text);
     }
 
+    public void attackEnemies() {
+        for(Tower t: towerList) {
+            if(t.getTargetEnemy()!= null && t.canAttack()) {
 
+            }
+        }
+    }
+
+    public void attackEnemy(Tower source) {
+
+    }
     public void draw() {
         road.draw();
         if(waveIsInProgress){

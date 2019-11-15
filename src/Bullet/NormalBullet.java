@@ -11,8 +11,8 @@ public class NormalBullet extends Bullet{
        // REVIEW
          image = ImageProcessing.splits(19,11);
          /////////////////////////////////////////////
-        damage = tower.getDamage();
-        speed = tower.getSpeed();
+       /* damage = tower.getDamage();
+        speed = tower.getSpeed();*/
         range = tower.getRange();
         position = new Vec2d(tower.getPosition());
         towerPosition = tower.getPosition();

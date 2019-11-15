@@ -11,7 +11,7 @@ public class NormalTower extends Tower {
         this.reloadTime = newReloadTime;
         this.range = newRange;
         this.power = newPower;
-        // this.towerType
+        this.towerType = type.NORMAL;
     }
 
     private static int newBuyingCost = 100;
