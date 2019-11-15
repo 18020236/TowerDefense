@@ -148,6 +148,7 @@ public class GameField extends AnimationTimer {
         if(waveIsInProgress){
             for (Enemy s : activeEnemyQueue) {
                 s.draw();
+//                s.drawEnemyHealth(root);
             }
         }
         drawText("LIVES: " + Player.getPlayer().getLives(),20, 100, 300);

@@ -11,6 +11,6 @@ public class Config {
     public static final int START_POINT_Y = 32 * 12 + 8;
     public static final int START_POINT_X = -32;
 
-    //
+    public static final int BLOOD_UNIT = 10;
 }
 // horizontal 25 vertical 15

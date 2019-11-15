@@ -5,6 +5,7 @@ import Initialization.Config;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public abstract class Enemy extends GameEntity {
@@ -18,6 +19,8 @@ public abstract class Enemy extends GameEntity {
     protected ArrayList<Image> images = new ArrayList<>();
     protected ArrayList<Image> gunShipImages = new ArrayList<>();
     ProgressBar healthBar = new ProgressBar();
+    Rectangle blood = new Rectangle(10*Config.BLOOD_UNIT, 10);
+
     public double getDangerousLevel()
     {
         return dangerousLevel;
@@ -190,8 +193,7 @@ public abstract class Enemy extends GameEntity {
     }
 
 //    public void drawEnemyHealth(AnchorPane root){
-//        health.set
-//        root.getChildren().add(this.healthBar);
+//        root.getChildren().add(blood);
 //    }
 
     public void draw()
@@ -203,5 +205,4 @@ public abstract class Enemy extends GameEntity {
             drawByEnemyType(gunShipImages);
         }
     }
-
 }
