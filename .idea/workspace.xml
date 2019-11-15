@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f977c6c-fd50-47b8-93ee-ae6592a09174" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Bullet/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Bullet/Bullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Bullet/NormalBullet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bullet/NormalBullet.java" beforeDir="false" />
     <list default="true" id="efd6956f-9b29-4089-8f20-9f7a0d34290d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TDefense/Bullet/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Bullet/Bullet.class" afterDir="false" />
