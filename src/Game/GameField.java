@@ -23,24 +23,6 @@ public class GameField extends AnimationTimer {
         this.root = root;
         road = new Background(gc);
         restartGame();
-
-//        root.getChildren().add(GameField.text("GAME OVER", 200, 300));
-
-//        enemyQ = new LinkedList<>();
-//
-//        for (int j = 0; j < 100; j++) {
-//            if (Math.round(Math.random()) == 0) {
-//                enemyQ.add(new NormalEnemy(gc));
-//            } else {
-//                if (Math.round(Math.random()) == 0){
-//                    enemyQ.add(new TankerEnemy(gc));
-//                } else enemyQ.add(new GunShip(gc));
-//            }
-//        }
-
-//        for (int j = 0; j < 10; j++) {
-//            enemyQ.add(new TankerEnemy(gc));
-//        }
     }
 
     private Background road;
@@ -69,10 +51,8 @@ public class GameField extends AnimationTimer {
         waveIsInProgress = true;
         enemyQueue = new LinkedList<Enemy>();
         activeEnemyQueue = new LinkedList<Enemy>();
-//        towerList =  new ArrayList<Tower>();
         createEnemyQueueForLevel();
         gameOver = false;
-
     }
 
 
@@ -123,23 +103,15 @@ public class GameField extends AnimationTimer {
             }
             if(!gameOver){
                 updateEnemies();
-//                targetEnemies();
-//                attackEnemies();
             }
         }
 
-//        if(Mouse.isButtonDown(0)){
-//            mouseClicked(Mouse.getX(), container.getHeight() - Mouse.getY(), sbg, container);
-//        }
 
         if(Player.getPlayer().getLives() <= 0){
             System.out.println(Player.getPlayer().getLives() + " het mau cmnr");
             gameOver = true;
         }
 
-//        for (int i = 0; i < enemyList.size(); i++) {
-//            enemyList.get(i).update(road.getMap());
-//        }
     }
     public void drawText(String str, int size, double x,  double y){
         TextFlow text_flow = new TextFlow();
@@ -164,8 +136,6 @@ public class GameField extends AnimationTimer {
                 s.draw();
             }
         }
-        //draw health, wave,
-//        root.getChildren().add(GameField.text("GAME OVER", 200, 300));
         drawText("LIVES: " + Player.getPlayer().getLives(),20, 100, 300);
         drawText("CASH: " + Player.getPlayer().getCredits(),20, 300, 300);
         drawText("LEVEL: " + currentLevel,20, 500, 300);
@@ -173,9 +143,6 @@ public class GameField extends AnimationTimer {
         if(gameOver){
             drawText("GAME OVER",40, 200, 300);
         }
-//        for (Enemy s : activeEnemyQueue) {
-//            s.draw();
-//        }
     }
 
     @Override
