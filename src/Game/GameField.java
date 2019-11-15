@@ -173,6 +173,7 @@ public class GameField extends AnimationTimer {
         if(waveIsInProgress){
             for (Enemy s : activeEnemyQueue) {
                 s.draw();
+//                s.drawEnemyHealth(root);
             }
         }
         //draw health, wave,
