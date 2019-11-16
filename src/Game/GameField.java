@@ -1,6 +1,6 @@
 package Game;
 
-import Enemy.*;
+import Enemy.Enemy;
 import Enemy.EnemyGenerator;
 import Initialization.Background;
 import Tower.Tower;
@@ -11,7 +11,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -37,7 +36,17 @@ public class GameField extends AnimationTimer {
     static long tickCount = 0;
     public static boolean gameOver = false;
     private static int currentLevel = 0;
+    private String level;
+    private String lives;
+    private String cash;
     EnemyGenerator generator;
+
+    Font font = Font.font("Verdana", FontWeight.NORMAL, 20);
+    private Text textLevel = new Text("");
+    private Text textLives = new Text("");
+    private Text textCash = new Text("");
+    private Text textGameOver = new Text("GAME OVER");
+
 
     public void addEnemiesToActiveEnemyQueue(){
         tickCount++;
@@ -82,7 +91,7 @@ public class GameField extends AnimationTimer {
 
             if(s.isAtEndPoint()){
                 Player.getPlayer().decreaseLife();
-                System.out.println(Player.getPlayer().getLives());
+                root.getChildren().remove(s.healthBar());
                 enemiesToRemove.add(s);
             }
         }
@@ -93,8 +102,9 @@ public class GameField extends AnimationTimer {
         }
 
         if(enemyQueue.size()==0 && activeEnemyQueue.size() == 0){
-            waveIsInProgress = false;
+//            waveIsInProgress = false;
             currentLevel++;
+            createEnemyQueueForLevel();
         }
     }
 
@@ -103,12 +113,13 @@ public class GameField extends AnimationTimer {
         if(waveIsInProgress){
             if(enemyQueue.size()!=0){
                 addEnemiesToActiveEnemyQueue();
+            } else if(enemyQueue.size() == 0 && activeEnemyQueue.size() == 0){
+                currentLevel++;
             }
             if(!gameOver){
                 updateEnemies();
             }
         }
-
 
         if(Player.getPlayer().getLives() <= 0){
             System.out.println(Player.getPlayer().getLives() + " het mau cmnr");
@@ -116,18 +127,13 @@ public class GameField extends AnimationTimer {
         }
 
     }
-    public void drawText(String str, int size, double x,  double y){
-        TextFlow text_flow = new TextFlow();
-        // create a font
-        Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, size);
-        // create text
-        Text text = new Text(str);
-        // set the text color
+    public void drawText(Text text, int size, double x,  double y){
+        Font font = Font.font("Verdana", FontWeight.NORMAL, size);
         text.setFill(Color.BLACK);
-        // set font of the text
         text.setFont(font);
         text.setX(x);
         text.setY(y);
+        root.getChildren().remove(text);
         root.getChildren().add(text);
     }
 
@@ -144,18 +150,28 @@ public class GameField extends AnimationTimer {
     }
     public void draw() {
         road.draw();
-        if(waveIsInProgress){
+        if(waveIsInProgress) {
             for (Enemy s : activeEnemyQueue) {
                 s.draw();
                 s.drawEnemyHealth(root);
             }
         }
-        drawText("LIVES: " + Player.getPlayer().getLives(),20, 100, 300);
-        drawText("CASH: " + Player.getPlayer().getCredits(),20, 300, 300);
-        drawText("LEVEL: " + currentLevel,20, 500, 300);
+
+        lives = "LIVES: " + Player.getPlayer().getLives();
+        cash = "CASH: " + Player.getPlayer().getCredits();
+        level = "LEVEL: " + currentLevel;
+        textLives.setText(lives);
+        textCash.setText(cash);
+        textLevel.setText(level);
+        drawText(textLives,20, 100, 300);
+        drawText(textCash,20, 300, 300);
+        drawText(textLevel,20, 500, 300);
 
         if(gameOver){
-            drawText("GAME OVER",40, 200, 300);
+            root.getChildren().remove(textCash);
+            root.getChildren().remove(textLevel);
+            root.getChildren().remove(textLives);
+            drawText(textGameOver,40, 200, 300);
         }
     }
 

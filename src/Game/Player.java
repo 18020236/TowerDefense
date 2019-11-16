@@ -4,7 +4,8 @@ public class Player {
     private static int credits = 0;
     private static int lives;
     private static final int STARTINGCREDITS = 200;
-    private static final int STARTINGLIVES = 16;
+    private static final int STARTINGLIVES = 40000;
+//    private static final int STARTINGLIVES = 16;
     private static Player instance = null;
 
     public static synchronized Player getPlayer(){

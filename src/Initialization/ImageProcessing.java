@@ -27,5 +27,4 @@ public class ImageProcessing {
         imageView.setRotate(angle);
         return imageView.snapshot(parameters, null);
     }
-
 }
