@@ -178,7 +178,12 @@ public abstract class Enemy extends GameEntity {
         healthBar.setValue(0.65, position.x, position.y);
     }
 
-
+    public void takeDamage(double damage){
+        health = health - damage/armor;
+        if(health <= 0){
+            alive = false;
+        }
+    }
 
     public void drawByEnemyType(ArrayList<Image> images){
         if(check.equals("TURN_RIGHT"))
