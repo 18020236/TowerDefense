@@ -2,10 +2,10 @@ package Enemy;
 
 import Game.GameEntity;
 import Initialization.Config;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public abstract class Enemy extends GameEntity {
@@ -18,7 +18,12 @@ public abstract class Enemy extends GameEntity {
     protected String name = "DEFAULT";
     protected ArrayList<Image> images = new ArrayList<>();
     protected ArrayList<Image> gunShipImages = new ArrayList<>();
-    ProgressBar healthBar = new ProgressBar();
+    HealthBar healthBar = new HealthBar();
+
+    public HealthBar healthBar(){
+        return this.healthBar;
+    }
+
     Rectangle blood = new Rectangle(10*Config.BLOOD_UNIT, 10);
 
     public double getDangerousLevel()
@@ -169,6 +174,8 @@ public abstract class Enemy extends GameEntity {
     {
         move(map);
         dangerousLevel += speed;
+//        healthBar.setValue((double)this.getHealth()/health, position.x, position.y);
+        healthBar.setValue(0.65, position.x, position.y);
     }
 
 
@@ -192,9 +199,10 @@ public abstract class Enemy extends GameEntity {
         }
     }
 
-//    public void drawEnemyHealth(AnchorPane root){
-//        root.getChildren().add(blood);
-//    }
+    public void drawEnemyHealth(AnchorPane root){
+        root.getChildren().remove(healthBar);
+        root.getChildren().add(healthBar);
+    }
 
     public void draw()
     {

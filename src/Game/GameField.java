@@ -1,6 +1,6 @@
 package Game;
 
-import Enemy.Enemy;
+import Enemy.*;
 import Enemy.EnemyGenerator;
 import Initialization.Background;
 import Tower.Tower;
@@ -27,7 +27,6 @@ public class GameField extends AnimationTimer {
         road = new Background(gc);
         restartGame();
     }
-
     private Background road;
     private static Queue<Enemy> enemyQueue = new LinkedList<Enemy>();
     public  static Queue<Enemy> activeEnemyQueue = new LinkedList<Enemy>();
@@ -148,7 +147,7 @@ public class GameField extends AnimationTimer {
         if(waveIsInProgress){
             for (Enemy s : activeEnemyQueue) {
                 s.draw();
-//                s.drawEnemyHealth(root);
+                s.drawEnemyHealth(root);
             }
         }
         drawText("LIVES: " + Player.getPlayer().getLives(),20, 100, 300);
