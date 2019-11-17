@@ -1,35 +1,27 @@
 package Tower;
 
-import Bullet.Bullet;
 import Enemy.Enemy;
 import Game.GameEntity;
 import Game.Player;
+import Initialization.ImageProcessing;
 import com.sun.javafx.geom.Vec2d;
-
-public class Tower extends GameEntity {
-    public enum type{
-        NORMAL, SNIPER, MACHINEGUN;
-    }
+public abstract class Tower extends GameEntity {
     protected int buyingCost;
     protected int refundValue;
     protected double range;
     protected double power;
-    protected Bullet bullet;
     protected Enemy targetEnemy;
     protected double reloadTime;
     private long lastAttackTime;
     private double angleOfRotation;
-    protected type towerType;
-    private double bulletTravelDistanceMaximum;
+    private double enemyTravelDistanceMaximum = 0;
     public Tower(Vec2d pos) {
         this.position = pos;
         this.lastAttackTime = 0;
         angleOfRotation = 0;
         lastAttackTime = 0;
     }
-
     // TIME PER SHOOTING
-
     public boolean canAttack() {
         if((System.currentTimeMillis() - lastAttackTime)/1000.0 >= reloadTime) {
             return true;
@@ -66,12 +58,12 @@ public class Tower extends GameEntity {
         return targetEnemy;
     }
 
-    public double getBulletTravelDistanceMaximum() {
-        return bulletTravelDistanceMaximum;
+    public double getEnemyTravelDistanceMaximum() {
+        return enemyTravelDistanceMaximum;
     }
 
-    public void setBulletTravelDistanceMaximum(double bulletTravelDistanceMaximum) {
-        this.bulletTravelDistanceMaximum = bulletTravelDistanceMaximum;
+    public void setEnemyTravelDistanceMaximum(double enemyTravelDistanceMaximum) {
+        this.enemyTravelDistanceMaximum = enemyTravelDistanceMaximum;
     }
 
     public double getRotationAngleInDegrees() {
@@ -92,5 +84,9 @@ public class Tower extends GameEntity {
 
     public void setTimeOfLastAttack(long time) {
         lastAttackTime = time;
+    }
+
+    public void draw() {
+        gc.drawImage(ImageProcessing.rotate(image,this.getRotationAngleInDegrees()),position.x,position.y);
     }
 }

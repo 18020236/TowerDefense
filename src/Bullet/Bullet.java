@@ -2,35 +2,29 @@ package Bullet;
 
 import Enemy.Enemy;
 import Game.GameEntity;
+import Initialization.ImageProcessing;
 import com.sun.javafx.geom.Vec2d;
+import javafx.scene.canvas.GraphicsContext;
 
 public class Bullet extends GameEntity {
-    public enum bulletType{
-        NORMAL, SNIPER, MACHINEGUN ;
-    }
     private Vec2d Dest;
     private Vec2d Init;
     protected double speed =20;
     protected double power;
-    private bulletType bulletType;
     private boolean arrivedAtTarget = false;
     private Enemy targetEnemy;
-
-    public Bullet(Vec2d Init, Vec2d Dest, double power, Enemy targetEnemy, bulletType Type) {
+    public Bullet(GraphicsContext gc,Vec2d Init, Vec2d Dest, double power, Enemy targetEnemy) {
+        this.gc = gc;
         this.Init = Init;
         this.Dest = Dest;
         this.power = power;
         this.targetEnemy = targetEnemy;
-        this.bulletType = Type;
-
+        this.image = ImageProcessing.splits(19,11);
         // REVIEW
 
         this.position.x = Init.x + 12*Math.cos(angleOfBulletInRadians());
         this.position.y = Init.y + 12*Math.sin(angleOfBulletInRadians());
         arrivedAtTarget = false;
-        if(Type == bulletType.SNIPER) {
-            speed = 15;
-        }
     }
 
     public double angleOfBullletInDegrees() {
@@ -44,11 +38,7 @@ public class Bullet extends GameEntity {
     public void move() {
         if(Math.abs(position.x - Dest.x) < speed/2 || Math.abs(position.y - Dest.y) < speed /2 ) {
             arrivedAtTarget = true;
-            /* CHUNG CHUA VIET
-                    .
-                    .
-                    .*/
-            // targetEnemy.takeDamage(power);
+            targetEnemy.takeDamage(power);
         } else {
             position.x += speed*Math.cos(angleOfBulletInRadians());
             position.y += speed*Math.sin(angleOfBulletInRadians());
@@ -60,8 +50,5 @@ public class Bullet extends GameEntity {
     }
     public double getSpeed() {
         return this.speed;
-    }
-    public bulletType getType() {
-        return this.bulletType;
     }
 }

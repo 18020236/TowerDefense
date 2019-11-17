@@ -1,17 +1,20 @@
 package Tower;
 
 
+import Initialization.ImageProcessing;
 import com.sun.javafx.geom.Vec2d;
+import javafx.scene.canvas.GraphicsContext;
 
 public class NormalTower extends Tower {
-    public NormalTower(Vec2d position) {
+    public NormalTower(GraphicsContext gc, Vec2d position) {
         super(position);
+        this.gc = gc;
         this.buyingCost = newBuyingCost;
         this.refundValue = newRefundValue;
         this.reloadTime = newReloadTime;
         this.range = newRange;
         this.power = newPower;
-        this.towerType = type.NORMAL;
+        this.image = ImageProcessing.splits(19,8);
     }
 
     private static int newBuyingCost = 100;
