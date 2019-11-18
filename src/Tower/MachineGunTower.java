@@ -20,5 +20,5 @@ public class MachineGunTower extends Tower {
     private static int newRefundValue = 180;
     private static int newReloadTime = 4;
     private static int newPower = 0;
-    private static double newRange = 80;
+    private static double newRange = 64;
 }

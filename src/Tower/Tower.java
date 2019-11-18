@@ -87,6 +87,7 @@ public abstract class Tower extends GameEntity {
     }
 
     public void draw() {
-        gc.drawImage(ImageProcessing.rotate(image,this.getRotationAngleInDegrees()),position.x,position.y);
+        gc.drawImage(ImageProcessing.rotate(image,this.getRotationAngleInDegrees()),position.x,position.y,32,32);
+        gc.strokeOval(position.x + 16-range , position.y + 16-range,range*2,range*2);
     }
 }
