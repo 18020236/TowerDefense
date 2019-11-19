@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a914a3f3-3569-496d-866c-e2743787bec1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Initialization/map.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/MenuScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/GunShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/GunShip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Initialization/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Initialization/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Scene/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Scene/Menu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Scene/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Scene/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Scene/SceneManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Scene/SceneManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/NormalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/NormalTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Initialization/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Initialization/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scene/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/NormalTower.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,14 +52,15 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Game" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Initialization" />
+      <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Scene" />
       <recent name="C:\Users\chung\OneDrive\Desktop\Giang\src\Initialization" />
       <recent name="C:\Users\Admin\IdeaProjects\Game\src\Initialization" />
       <recent name="C:\Users\Admin\IdeaProjects\Game\src" />
-      <recent name="C:\Users\Admin\IdeaProjects\Game" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Game" />
     </key>
   </component>
   <component name="RunDashboard">

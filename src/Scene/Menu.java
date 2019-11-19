@@ -1,10 +1,13 @@
 package Scene;
 
+import Initialization.Config;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
@@ -39,7 +42,18 @@ public class Menu implements SceneInterface {
      */
     @Override
     public Scene init(int width, int height) {
-        root = new Group();
+        Image image = new Image("Initialization/map.png");
+        //Setting the image view
+        ImageView imageView = new ImageView(image);
+        imageView.fitWidthProperty();
+        imageView.setFitWidth(Config.WIDTH);
+        imageView.setFitHeight(Config.HEIGHT);
+        //Setting the preserve ratio of the image view
+        imageView.setPreserveRatio(false);
+
+
+        root = new Group(imageView);
+
         menuScene = new Scene(root, width, height, Color.AZURE);
 
         addStartButton();
@@ -65,7 +79,7 @@ public class Menu implements SceneInterface {
     }
 
     private void addStartButton() {
-        Button startButton = createButton("Start Game", 50, 50);
+        Button startButton = createButton("Start Game", 270, 150);
 
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override

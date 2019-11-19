@@ -80,7 +80,7 @@ public class GameField extends AnimationTimer {
         generator.createEnemyQueue(gc);
 //        generator.RandomizeEnemyQueue();
         enemyQueue = generator.getCritterQueue();
-        activeEnemyQueue = new LinkedList<Enemy>();
+//        activeEnemyQueue = new LinkedList<Enemy>();
         activeEnemyQueue.add(enemyQueue.poll());
     }
 
