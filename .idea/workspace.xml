@@ -3,18 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="a914a3f3-3569-496d-866c-e2743787bec1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/BossEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/BossEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/EnemyGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/EnemyGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/GunShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/GunShip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/NormalEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/SmallerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/SmallerEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/TankerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/TankerEnemy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Game/GameStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Game/GameStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/MachineGunTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/MachineGunTower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/NormalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/NormalTower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/SniperTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/SniperTower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/Tower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/Tower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Initialization/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Initialization/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Scene/SceneManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Scene/SceneManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/EnemyGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/EnemyGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/GameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tower/MachineGunTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/MachineGunTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/NormalTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tower/SniperTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/SniperTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/Tower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Initialization/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Initialization/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scene/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/SceneManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

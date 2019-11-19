@@ -36,7 +36,7 @@ public class GameField extends AnimationTimer {
     private ArrayList<Enemy> enemyList;
     private static ArrayList<Tower> towerList = new ArrayList<Tower>();
     private static ArrayList<Bullet> bulletList = new ArrayList<Bullet>();
-    private final int enemySpawnDelay = 20;
+    private final int enemySpawnDelay = 50;
     private static boolean waveIsInProgress = true;
     static long tickCount = 0;
     public static boolean gameOver = false;
@@ -78,7 +78,7 @@ public class GameField extends AnimationTimer {
     public void createEnemyQueueForLevel() {
         generator = new EnemyGenerator(currentLevel - 1);
         generator.createEnemyQueue(gc);
-        generator.RandomizeEnemyQueue();
+//        generator.RandomizeEnemyQueue();
         enemyQueue = generator.getCritterQueue();
         activeEnemyQueue = new LinkedList<Enemy>();
         activeEnemyQueue.add(enemyQueue.poll());

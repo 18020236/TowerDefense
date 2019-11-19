@@ -124,8 +124,8 @@ public class SceneManager {
 
         AnchorPane root = new AnchorPane();
 
-        Scene theScene = new Scene( root , Config.WIDTH, Config.HEIGHT);
-        stage.setScene( theScene );
+        Scene scene = new Scene( root , Config.WIDTH, Config.HEIGHT);
+        stage.setScene( scene );
         Canvas canvas = new Canvas( Config.WIDTH, Config.HEIGHT );
         root.getChildren().add( canvas );
         System.out.println(Player.getPlayer().getLives());
@@ -135,8 +135,8 @@ public class SceneManager {
 //        }
         GraphicsContext gc = canvas.getGraphicsContext2D();
         Control control = new Control(root);
-        theScene.setOnMouseMoved(Control::mouseMoved);
-        theScene.setOnMouseClicked(Control::mouseClicked);
+        scene.setOnMouseMoved(Control::mouseMoved);
+        scene.setOnMouseClicked(Control::mouseClicked);
 
         GameField gameField= new GameField(gc, root);
         gameField.start();

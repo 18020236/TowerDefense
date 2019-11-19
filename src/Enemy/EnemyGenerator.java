@@ -2,7 +2,6 @@ package Enemy;
 
 import javafx.scene.canvas.GraphicsContext;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -19,7 +18,7 @@ public class EnemyGenerator {
 
     int[][] EnemyStream = {
             //{smaller, normal, gunship, tanker, boss}
-            //{smaller, gunship, normal, tanker, boss} (test version)
+            //{gunship, smaller, normal, tanker, boss} (test version)
 //            {2,1,0,0,0},
             {20,8,10,10,3},
             {5,2,0,0,0},
@@ -45,10 +44,10 @@ public class EnemyGenerator {
         return cListToAppend;
     }
 
-    public void RandomizeEnemyQueue()
-    {
-        Collections.shuffle((LinkedList<Enemy>) EnemyQueue);
-    }
+//    public void RandomizeEnemyQueue()
+//    {
+//        Collections.shuffle((LinkedList<Enemy>) EnemyQueue);
+//    }
 
     public void createEnemyQueue(GraphicsContext gc){
         //for that level, create the enemy objects as per the values in the enemy stream and then randomize the queue
@@ -78,19 +77,19 @@ public class EnemyGenerator {
 
     private Enemy addEnemy(GraphicsContext gc, int x){
         if(x==0){
-            Enemy c = new SmallerEnemy(gc);
-            return c;
-        }
-        if(x==1){
             Enemy c = new GunShip(gc);
             return c;
         }
+        if(x==1){
+            Enemy c = new SmallerEnemy(gc);
+            return c;
+        }
         if(x==2){
-            Enemy c = new TankerEnemy(gc);
+            Enemy c = new NormalEnemy(gc);
             return c;
         }
         if(x==3){
-            Enemy c = new NormalEnemy(gc);
+            Enemy c = new TankerEnemy(gc);
             return c;
         }
         if(x==4){
