@@ -1,9 +1,8 @@
 package Game;
-
-import Bullet.Bullet;
 import Enemy.Enemy;
 import Enemy.EnemyGenerator;
 import Initialization.Background;
+import Tower.NormalTower;
 import Tower.Tower;
 import com.sun.javafx.geom.Vec2d;
 import javafx.animation.AnimationTimer;
@@ -13,7 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import Tower.*;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -33,9 +32,7 @@ public class GameField extends AnimationTimer {
     private Background road;
     private static Queue<Enemy> enemyQueue = new LinkedList<Enemy>();
     public static Queue<Enemy> activeEnemyQueue = new LinkedList<Enemy>();
-    private ArrayList<Enemy> enemyList;
     private static ArrayList<Tower> towerList = new ArrayList<Tower>();
-    private static ArrayList<Bullet> bulletList = new ArrayList<Bullet>();
     private final int enemySpawnDelay = 50;
     private static boolean waveIsInProgress = true;
     static long tickCount = 0;
@@ -69,18 +66,17 @@ public class GameField extends AnimationTimer {
         activeEnemyQueue = new LinkedList<Enemy>();
         createEnemyQueueForLevel();
         gameOver = false;
-        towerList.add(new NormalTower(gc,new Vec2d(32,32),activeEnemyQueue));
+    //    towerList.add(new NormalTower(gc,new Vec2d(32,32),activeEnemyQueue));
         towerList.add(new NormalTower(gc,new Vec2d(7*32,8*32),activeEnemyQueue));
-        towerList.add(new NormalTower(gc, new Vec2d(4*32,4*32),activeEnemyQueue));
+       // towerList.add(new NormalTower(gc, new Vec2d(4*32,4*32),activeEnemyQueue));
     }
 
 
     public void createEnemyQueueForLevel() {
         generator = new EnemyGenerator(currentLevel - 1);
         generator.createEnemyQueue(gc);
-//        generator.RandomizeEnemyQueue();
         enemyQueue = generator.getCritterQueue();
-        activeEnemyQueue = new LinkedList<Enemy>();
+      //  activeEnemyQueue = new LinkedList<Enemy>();  HUHU
         activeEnemyQueue.add(enemyQueue.poll());
     }
 
@@ -103,7 +99,7 @@ public class GameField extends AnimationTimer {
             }
         }
 
-        //remove all the dead critters and the critters that have arrived at the exit
+        //remove all the dead enemies and the enemies that have arrived at the exit
         for (Enemy s : enemiesToRemove) {
             root.getChildren().remove(s.healthBar());
             activeEnemyQueue.remove(s);
@@ -117,7 +113,6 @@ public class GameField extends AnimationTimer {
     }
 
     public void update() {
-
         if (waveIsInProgress) {
             if (enemyQueue.size() != 0) {
                 addEnemiesToActiveEnemyQueue();
@@ -126,10 +121,9 @@ public class GameField extends AnimationTimer {
             }
             if (!gameOver) {
                 updateEnemies();
-              //  targetEnemies();
-            }
-            for(int i = 0;i <towerList.size();i++) {
-                towerList.get(i).update();
+                for(int i = 0;i <towerList.size();i++) {
+                    towerList.get(i).update();
+                }
             }
         }
 
@@ -137,7 +131,6 @@ public class GameField extends AnimationTimer {
             System.out.println(Player.getPlayer().getLives() + " het mau cmnr");
             gameOver = true;
         }
-
     }
 
     public void drawText(Text text, int size, double x, double y) {
@@ -148,60 +141,6 @@ public class GameField extends AnimationTimer {
         text.setY(y);
         root.getChildren().remove(text);
         root.getChildren().add(text);
-    }
-
-    public void targetEnemies() {
-        for(Tower t: towerList) {
-            t.setTargetEnemy(null);
-            //
-            //  ENEMY THIEU HAM ISVISIBLE
-            //
-            for(Enemy e : activeEnemyQueue) {
-                if(e.isAlive() ) {
-                    // Calculate distance
-                    double xDist = Math.abs(e.getPosition().x - t.getPosition().x);
-                    double yDist = Math.abs(e.getPosition().x - t.getPosition().y);
-                    double dist = Math.sqrt((xDist*xDist) + (yDist*yDist));
-                    // ENEMY THIEU HAM getEnemyTravelDistanceMaximum
-                    if(dist < t.getRange()) {
-                        t.setTargetEnemy(e);
-                    }
-                }
-            }
-            t.setEnemyTravelDistanceMaximum(0);
-        }
-    }
-  /*  public void attackEnemies() {
-        for (Tower t : towerList) {
-            if (t.getTargetEnemy() != null && t.canAttack()) {
-                attackEnemy(t);
-                t.setTimeOfLastAttack(System.currentTimeMillis());
-            }
-        }
-    }*/
-
-    /*public void attackEnemy(Tower source) {
-        Bullet bullet = new Bullet(gc, new Vec2d(source.getPosition().x,source.getPosition().y), new Vec2d(source.getTargetEnemy().getPosition().x,source.getTargetEnemy().getPosition().y),
-                                    source.getPower(),source.getTargetEnemy());
-        bulletList.add(bullet);
-    }*/
-
-    public void reloadTowers() {
-        for(Tower t : towerList) {
-            t.setTimeOfLastAttack(0);
-        }
-    }
-
-    public Tower getNearestTower( int x , int y ) {
-        double distanceApproximation = 100;
-        Tower neareastTower = null;
-        for ( Tower t : towerList) {
-            if ( Math.abs(t.getPosition().x - x) + Math.abs(t.getPosition().y -y) < distanceApproximation ) {
-                neareastTower = t;
-                distanceApproximation = Math.abs(t.getPosition().x - x) + Math.abs(t.getPosition().y - y) ;
-            }
-        }
-        return neareastTower;
     }
 
     public void draw() {
