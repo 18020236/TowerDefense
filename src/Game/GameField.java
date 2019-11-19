@@ -69,9 +69,9 @@ public class GameField extends AnimationTimer {
         activeEnemyQueue = new LinkedList<Enemy>();
         createEnemyQueueForLevel();
         gameOver = false;
-        towerList.add(new NormalTower(gc,new Vec2d(32,32)));
-        towerList.add(new SniperTower(gc,new Vec2d(7*32,8*32)));
-        towerList.add(new MachineGunTower(gc, new Vec2d(4*32,4*32)));
+        towerList.add(new NormalTower(gc,new Vec2d(32,32),activeEnemyQueue));
+        towerList.add(new NormalTower(gc,new Vec2d(7*32,8*32),activeEnemyQueue));
+        towerList.add(new NormalTower(gc, new Vec2d(4*32,4*32),activeEnemyQueue));
     }
 
 
@@ -127,6 +127,9 @@ public class GameField extends AnimationTimer {
                 updateEnemies();
               //  targetEnemies();
             }
+            for(int i = 0;i <towerList.size();i++) {
+                towerList.get(i).update();
+            }
         }
 
         if (Player.getPlayer().getLives() <= 0) {
@@ -167,20 +170,20 @@ public class GameField extends AnimationTimer {
             t.setEnemyTravelDistanceMaximum(0);
         }
     }
-    public void attackEnemies() {
+  /*  public void attackEnemies() {
         for (Tower t : towerList) {
             if (t.getTargetEnemy() != null && t.canAttack()) {
                 attackEnemy(t);
                 t.setTimeOfLastAttack(System.currentTimeMillis());
             }
         }
-    }
+    }*/
 
-    public void attackEnemy(Tower source) {
+    /*public void attackEnemy(Tower source) {
         Bullet bullet = new Bullet(gc, new Vec2d(source.getPosition().x,source.getPosition().y), new Vec2d(source.getTargetEnemy().getPosition().x,source.getTargetEnemy().getPosition().y),
                                     source.getPower(),source.getTargetEnemy());
         bulletList.add(bullet);
-    }
+    }*/
 
     public void reloadTowers() {
         for(Tower t : towerList) {
