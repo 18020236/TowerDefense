@@ -1,79 +1,68 @@
-//package Game;
-//
 //import javafx.event.ActionEvent;
-//import javafx.scene.control.Menu;
-//import javafx.scene.control.MenuItem;
-//
-//import java.util.Collection;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//import java.util.Optional;
-//
-//import javafx.application.Application;
-//import javafx.event.ActionEvent;
-//import javafx.fxml.FXML;
-//import javafx.scene.Parent;
+//import javafx.event.EventHandler;
+//import javafx.scene.Group;
 //import javafx.scene.Scene;
-//import javafx.scene.control.Alert;
-//import javafx.scene.control.Alert.AlertType;
-//import javafx.scene.control.ButtonType;
-//import javafx.scene.control.Menu;
-//import javafx.scene.control.MenuItem;
-//import javafx.scene.layout.Pane;
-//import javafx.scene.layout.StackPane;
+//import javafx.scene.control.Button;
 //import javafx.scene.paint.Color;
-//import javafx.scene.shape.Rectangle;
-//import javafx.scene.text.Font;
-//import javafx.scene.text.Text;
-//import javafx.stage.Stage;
 //
+///**
+// * This class represents the Menu Scene from where the levels can be started.
+// * It is the main starting Scene for almost every action. From here, the player
+// * can either go read the instructions or start the game.
+// *
+// * @author Daniel Chai (dhc10)
+// * @version 1.0
+// */
+//public class Menu implements SceneInterface {
+//    private SceneManager sceneManager;
+//    private Scene menuScene;
+//    private Group root;
 //
-//public class Menu<gameType> {
-//    public final String[] gameType = {"Easy", "Medium", "Hard", "Very Hard"};
-//    private String difficulty;
-//    public Menu gameMenu = new Menu();
-//
-//    public void menu() {
-//        for(String game : gameType){
-//            MenuItem menuItem = new MenuItem(game);
-//            menuItem.setUserData(game);
-//            menuItem.setOnAction((ActionEvent event) -> {
-//                selectGame(event);
-//            });
-//            gameMenu.
-//        }
+//    /**
+//     * Constructor for Menu class
+//     * @param sceneManager SceneManager currently being used
+//     */
+//    public Menu(SceneManager sceneManager) {
+//        this.sceneManager = sceneManager;
 //    }
 //
-//    private void selectGame(ActionEvent event) {
-//        MenuItem menuItem = (MenuItem)event.getSource();
-//        difficulty = (String)menuItem.getUserData();
-//        switch (difficulty) {
-//            case "Easy":
-//                TILE_SIZE = 200;
-//                break;
-//            case "Medium":
-//                TILE_SIZE = 100;
-//                break;
-//            case "Hard":
-//                TILE_SIZE = 50;
-//                break;
-//            case "Very Hard":
-//                TILE_SIZE = 40;
-//                break;
-//            default:
-//                break;
-//        }
+//    /**
+//     * Returns the Menu Scene
+//     */
+//    @Override
+//    public Scene init(int width, int height) {
+//        root = new Group();
+//        menuScene = new Scene(root, width, height, Color.AZURE);
+//
+//        addStartButton();
+//        addInstructionsButton();
+//
+//        return menuScene;
 //    }
 //
+//    private void addStartButton() {
+//        Button startButton = UIGenerator.createButton("Start Game", 50, 50);
 //
-//    for(String game : gameType){
-//        MenuItem menuItem = new MenuItem(game);
-//        menuItem.setUserData(game);
-//        menuItem.setOnAction((ActionEvent event) -> {
-//            selectGame(event);
+//        startButton.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                sceneManager.goToBattleScene(sceneManager, 0);
+//            }
 //        });
-//        gameMenu.getItems().add(menuItem);
+//
+//        root.getChildren().add(startButton);
 //    }
-//    MenuBar menuBar = new MenuBar(gameMenu);
+//
+//    private void addInstructionsButton() {
+//        Button instructionsButton = UIGenerator.createButton("Instructions", 50, 100);
+//
+//        instructionsButton.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                sceneManager.goToInstructionsScene(sceneManager);
+//            }
+//        });
+//
+//        root.getChildren().add(instructionsButton);
+//    }
 //}
