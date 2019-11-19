@@ -12,6 +12,7 @@ public class BossEnemy extends Enemy {
         name = "GunShip";
         position = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
         health = 15;
+        maxHealth = 15;
         speed = (float) 0.25;
 //        speed = (float) 3.2;
         armor = 8;

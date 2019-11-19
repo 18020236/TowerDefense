@@ -12,6 +12,7 @@ public class GunShip extends Enemy{
         this.gc=gc;
         position = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
         health = 3;
+        maxHealth = 3;
         speed = (float) 1.6;
 //        speed = (float) 3.2;
         armor = 1;

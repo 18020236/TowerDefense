@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public abstract class Enemy extends GameEntity {
     protected boolean alive = true;
     protected double health;
+    protected double maxHealth;
     protected float speed;
     protected int armor;
     protected int prize;
@@ -168,8 +169,8 @@ public abstract class Enemy extends GameEntity {
     {
         move(map);
         dangerousLevel += speed;
-//        healthBar.setValue((double)this.getHealth()/health, position.x, position.y);
-        healthBar.setValue(0.65, position.x, position.y);
+        healthBar.setValue((double)this.getHealth()/maxHealth, position.x, position.y);
+//        healthBar.setValue(0.65, position.x, position.y);
     }
 
     public void takeDamage(double damage){
