@@ -1,14 +1,10 @@
 package Tower;
-
-
 import Bullet.NormalBullet;
 import Enemy.Enemy;
 import Initialization.ImageProcessing;
 import com.sun.javafx.geom.Vec2d;
 import javafx.scene.canvas.GraphicsContext;
-
 import java.util.Queue;
-
 public class NormalTower extends Tower {
     public NormalTower(GraphicsContext gc, Vec2d position, Queue<Enemy> activeEnemyList ) {
         super(position);
@@ -23,7 +19,6 @@ public class NormalTower extends Tower {
         this.activeEnemyList = activeEnemyList;
         bullet = new NormalBullet(this,gc);
     }
-
     private static int newBuyingCost = 100;
     private static int newRefundValue = 90;
     private static double newReloadTime = 0.3;

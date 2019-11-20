@@ -3,10 +3,10 @@ package Tower;
 import Bullet.Bullet;
 import Enemy.Enemy;
 import Game.GameEntity;
-import Game.Player;
 import Initialization.ImageProcessing;
 import Initialization.Rotate;
 import com.sun.javafx.geom.Vec2d;
+import javafx.scene.paint.Color;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -30,27 +30,6 @@ public abstract class Tower extends GameEntity {
         angleOfRotation = 0;
         lastAttackTime = 0;
     }
-    /////////////////////
-    public void refundTower() {
-        Player.getPlayer().addCredits(refundValue);
-    }
-
-    public int getBuyingCost() {
-        return buyingCost;
-    }
-
-    public void setBuyingCost(int buyingCost) {
-        this.buyingCost = buyingCost;
-    }
-
-    public int getRefoundValue() {
-        return refundValue;
-    }
-
-    public void setRefoundValue(int refoundValue) {
-        this.refundValue = refoundValue;
-    }
-
 
     public void getTargetEnemy() {
         if(!bullet.isMoving) {
@@ -85,6 +64,14 @@ public abstract class Tower extends GameEntity {
     public void draw() {
         gc.drawImage(ImageProcessing.rotate(image,angleOfRotation),position.x,position.y,32,32);
         bullet.draw();;
+        Color color = Color.RED;
+        gc.setStroke(color);
         gc.strokeOval(position.x + 16-range , position.y + 16-range,range*2,range*2);
+        for (Enemy e : activeEnemyList) {
+            if (Vec2d.distance(e.getPosition().x, e.getPosition().y, position.x, position.y) <= range) {
+                gc.strokeLine(position.x + 16, position.y + 16, e.getPosition().x + 16, e.getPosition().y + 16);
+                break;
+            }
+        }
     }
 }
