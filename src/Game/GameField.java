@@ -67,7 +67,7 @@ public class GameField extends AnimationTimer {
         createEnemyQueueForLevel();
         gameOver = false;
     //    towerList.add(new NormalTower(gc,new Vec2d(32,32),activeEnemyQueue));
-        towerList.add(new NormalTower(gc,new Vec2d(7*32,8*32),activeEnemyQueue));
+        towerList.add(new NormalTower(gc,new Vec2d(6*32,8*32),activeEnemyQueue));
        // towerList.add(new NormalTower(gc, new Vec2d(4*32,4*32),activeEnemyQueue));
     }
 
