@@ -42,7 +42,7 @@ public class Menu implements SceneInterface {
      */
     @Override
     public Scene init(int width, int height) {
-        Image image = new Image("Initialization/map.png");
+        Image image = new Image("Resources/Map/map.png");
         //Setting the image view
         ImageView imageView = new ImageView(image);
         imageView.fitWidthProperty();

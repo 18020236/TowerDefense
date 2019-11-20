@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 
 public class ImageProcessing {
-    public static Image imageSheet = new Image("Initialization/Entity.png");
+    public static Image imageSheet = new Image("Resources/Map/Entity.png");
 
     public static Image splits(int x, int y)
     {

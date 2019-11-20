@@ -39,7 +39,7 @@ public class Background extends GameEntity{
 
     private static int[][] loadMapFromFile() {
         int a[][] = new int[15][25];
-        File file = new File("src/Initialization/Map.txt");
+        File file = new File("src/Resources/Map/Map.txt");
         Scanner sc = null;
 
         try {
