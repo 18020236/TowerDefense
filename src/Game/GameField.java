@@ -135,6 +135,12 @@ public class GameField extends AnimationTimer {
         }
     }
 
+    public void reloadTowers() {
+        for(Tower t : towerList) {
+            t.setLastAttackTime(0);
+        }
+    }
+
     public void update() {
         if (waveIsInProgress) {
             if (enemyQueue.size() != 0) {

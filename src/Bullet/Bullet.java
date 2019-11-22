@@ -6,8 +6,6 @@ import com.sun.javafx.geom.Vec2d;
 
 public abstract class Bullet extends GameEntity {
     protected double speed ;
-    private boolean arrivedAtTarget = false;
-    private Enemy targetEnemy;
     protected int range;
     protected int damage;
     protected Vec2d towerPos;
@@ -16,9 +14,9 @@ public abstract class Bullet extends GameEntity {
     // REVIEW
     public void shoot(Enemy dangerousEnemy) {
         if (dangerousEnemy!= null) {
-            double d= Vec2d.distance(position.x,position.y,dangerousEnemy.getPosition().x,dangerousEnemy.getPosition().y);
-            double dx= dangerousEnemy.getPosition().x - position.x;
-            double dy= dangerousEnemy.getPosition().y - position.y;
+            double d  = Vec2d.distance(position.x,position.y,dangerousEnemy.getPosition().x,dangerousEnemy.getPosition().y);
+            double dx = dangerousEnemy.getPosition().x - position.x;
+            double dy = dangerousEnemy.getPosition().y - position.y;
             double vx;
             double vy;
             if(d<speed){
@@ -36,8 +34,8 @@ public abstract class Bullet extends GameEntity {
                 position.y += vy;
                 isMoving = true;
             }
-        }
 
+        }
     }
 
     public void draw() {

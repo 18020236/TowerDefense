@@ -43,6 +43,18 @@ public abstract class Tower extends GameEntity {
         }
     }
 
+    public boolean canAttack(){
+        if((System.currentTimeMillis()-lastAttackTime)/1000.0 >= reloadTime){
+            return true;
+        }
+        else
+            return false;
+    }
+
+    public void setLastAttackTime(long time) {
+        lastAttackTime = time;
+    }
+
     public int  getRange() {
         return range;
     }
@@ -53,12 +65,12 @@ public abstract class Tower extends GameEntity {
 
     public void update() {
         getTargetEnemy();
-        if(dangerousEnemy!= null) {
+        if(dangerousEnemy!= null && this.canAttack()) {
             angleOfRotation = Rotate.setAngle(dangerousEnemy.getPosition(),position);
             bullet.shoot(dangerousEnemy);
             dangerousEnemy.takeDamage(power);
+            this.setLastAttackTime(System.currentTimeMillis());
         }
-
     }
 
     public void draw() {
@@ -67,11 +79,11 @@ public abstract class Tower extends GameEntity {
         Color color = Color.RED;
         gc.setStroke(color);
         gc.strokeOval(position.x + 16-range , position.y + 16-range,range*2,range*2);
-        for (Enemy e : activeEnemyList) {
+       /* for (Enemy e : activeEnemyList) {
             if (Vec2d.distance(e.getPosition().x, e.getPosition().y, position.x, position.y) <= range) {
                 gc.strokeLine(position.x + 16, position.y + 16, e.getPosition().x + 16, e.getPosition().y + 16);
                 break;
             }
-        }
+        }*/
     }
 }
