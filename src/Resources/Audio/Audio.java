@@ -29,4 +29,8 @@ public class Audio {
     public void play(){
         bg_player.play();
     }
+
+    public void stop() {
+        bg_player.stop();
+    }
 }
