@@ -3,6 +3,10 @@ package Bullet;
 import Enemy.Enemy;
 import Game.GameEntity;
 import com.sun.javafx.geom.Vec2d;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
 
 public abstract class Bullet extends GameEntity {
     protected double speed ;
@@ -10,6 +14,11 @@ public abstract class Bullet extends GameEntity {
     protected int damage;
     protected Vec2d towerPos;
     public boolean isMoving;
+
+    String path = "src/Resources/Audio/shot5.mp3";
+
+    //Instantiating Media class
+    Media shoot = new Media(new File(path).toURI().toString());
 
     // REVIEW
     public void shoot(Enemy dangerousEnemy) {
@@ -36,6 +45,16 @@ public abstract class Bullet extends GameEntity {
             }
 
         }
+    }
+
+    public void shootAudio(){
+        //Instantiating MediaPlayer class
+        MediaPlayer shootPlayer = new MediaPlayer(shoot);
+        shootPlayer.play();
+//        mediaPlayer.autoPlayProperty();
+//        shootPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+//        shootPlayer.setStartTime(Duration.seconds(0));
+//        shootPlayer.setStopTime(Duration.seconds(0.5));
     }
 
     public void draw() {

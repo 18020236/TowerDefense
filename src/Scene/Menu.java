@@ -1,6 +1,7 @@
 package Scene;
 
 import Initialization.Config;
+import Resources.Audio.Audio;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -8,8 +9,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.util.Duration;
+
+import java.io.File;
 
 /**
  * This class represents the Menu Scene from where the levels can be started.
@@ -29,6 +35,14 @@ public class Menu implements SceneInterface {
     private Scene menuScene;
     private Group root;
 
+    String path = "src/Resources/Audio/determination.mp3";
+
+    //Instantiating Media class
+    Media bg_audio = new Media(new File(path).toURI().toString());
+
+    //Instantiating MediaPlayer class
+    MediaPlayer bg_player = new MediaPlayer(bg_audio);
+    Audio clickAudio = new Audio("src/Resources/Audio/Click.mp3");
     /**
      * Constructor for Menu class
      * @param sceneManager SceneManager currently being used
@@ -42,7 +56,13 @@ public class Menu implements SceneInterface {
      */
     @Override
     public Scene init(int width, int height) {
-        Image image = new Image("Resources/Map/map.png");
+        bg_player.setAutoPlay(true);
+//        mediaPlayer.autoPlayProperty();
+        bg_player.setCycleCount(MediaPlayer.INDEFINITE);
+        bg_player.setStartTime(Duration.seconds(0));
+        bg_player.setStopTime(Duration.seconds(220));
+
+        Image image = new Image("Resources/Map/tower_defense_background.png");
         //Setting the image view
         ImageView imageView = new ImageView(image);
         imageView.fitWidthProperty();
@@ -84,7 +104,9 @@ public class Menu implements SceneInterface {
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                clickAudio.play();
                 sceneManager.goToGameScene(sceneManager);
+                bg_player.stop();
             }
         });
 

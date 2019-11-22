@@ -15,8 +15,8 @@ public class NormalEnemy extends Enemy {
         position = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
         health = 2;
         maxHealth = 2;
-//        speed = (float) 3.2;
-        speed = (float) 0.4;
+        speed = (float) 3.2;
+//        speed = (float) 0.4;
         armor = 8;
         prize = 60;
         image = ImageProcessing.splits(16,10);

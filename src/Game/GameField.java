@@ -3,21 +3,18 @@ package Game;
 import Enemy.Enemy;
 import Enemy.EnemyGenerator;
 import Initialization.Background;
+import Resources.Audio.Audio;
 import Tower.NormalTower;
 import Tower.Tower;
 import com.sun.javafx.geom.Vec2d;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -35,14 +32,15 @@ public class GameField extends AnimationTimer {
     }
 
     private Background road;
+    Audio bgAudio = new Audio("src/Resources/Audio/Brirfing_theme.mp3");
 
-    String path = "src/Resources/Audio/Brirfing_theme.mp3";
-
-    //Instantiating Media class
-    Media media = new Media(new File(path).toURI().toString());
-
-    //Instantiating MediaPlayer class
-    MediaPlayer mediaPlayer = new MediaPlayer(media);
+//    String path = "src/Resources/Audio/Brirfing_theme.mp3";
+//
+//    //Instantiating Media class
+//    Media bg_audio = new Media(new File(path).toURI().toString());
+//
+//    //Instantiating MediaPlayer class
+//    MediaPlayer bg_player = new MediaPlayer(bg_audio);
 
     //by setting this property to true, the audio will be player
     private static Queue<Enemy> enemyQueue = new LinkedList<Enemy>();
@@ -85,12 +83,7 @@ public class GameField extends AnimationTimer {
         towerList.add(new NormalTower(gc,new Vec2d(6*32,8*32),activeEnemyQueue));
        // towerList.add(new NormalTower(gc, new Vec2d(4*32,4*32),activeEnemyQueue));
 
-        mediaPlayer.setAutoPlay(true);
-//        mediaPlayer.autoPlayProperty();
-        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-        mediaPlayer.setStartTime(Duration.seconds(0));
-        mediaPlayer.setStopTime(Duration.seconds(36));
-//        mediaPlayer.
+        bgAudio.playCycle(36);
     }
 
 

@@ -2,14 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a914a3f3-3569-496d-866c-e2743787bec1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Resources/Audio/Audio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/Audio/determination.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Resources/Map/tower_defense_background.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TDefense/Bullet/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Bullet/Bullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/BossEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/BossEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/NormalEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/SmallerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/SmallerEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/TankerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/TankerEnemy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/NormalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/NormalTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Resources/Audio/Crossbow Shot.wav.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Resources/Audio/Dark Long Hits.mp3.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Resources/Audio/Magic Smite.wav.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Resources/Audio/Socapex - Evol Online all.mp3.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Resources/Audio/Tower Defense Sound - OpenGameArt.org.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Resources/Audio/Weapon Blow.wav.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Resources/Audio/determination.mp3.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Resources/Audio/hit.mp3.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Resources/Audio/shoot.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Resources/Audio/swishprev.mp3.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Scene/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Scene/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/Tower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/Tower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Bullet/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bullet/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/BossEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/BossEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/NormalEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/SmallerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/SmallerEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/TankerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/TankerEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/NormalTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/Tower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/Audio/Crossbow Shot.wav.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/Audio/Dark Long Hits.mp3.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/Audio/Magic Smite.wav.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/Audio/Socapex - Evol Online all.mp3.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/Audio/Tower Defense Sound - OpenGameArt.org.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/Audio/Weapon Blow.wav.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/Audio/determination.mp3.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/Audio/hit.mp3.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/Audio/shoot.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/Audio/swishprev.mp3.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scene/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scene/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/SceneManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +70,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Tower/Game" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -48,9 +80,9 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Resources\Map" />
+      <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Resources\Audio" />
       <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Initialization" />
       <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Resources" />
-      <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Resources\Audio" />
       <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Scene" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
