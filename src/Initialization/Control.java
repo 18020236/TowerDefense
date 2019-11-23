@@ -1,6 +1,6 @@
 package Initialization;
 
-import Resources.Audio.Audio;
+import Game.Audio;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;

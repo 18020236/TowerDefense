@@ -2,6 +2,7 @@ package Initialization;
 
 import Game.GameEntity;
 
+import com.sun.javafx.geom.Vec2d;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
@@ -9,11 +10,20 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Background extends GameEntity{
+public class Background implements GameEntity{
+    public static Image[][] getImages() {
+        return images;
+    }
 
     protected static Image[][] images = load();
     protected static int[][] map = loadMapFromFile();
     protected static GraphicsContext gc;
+    protected Vec2d position;
+    protected Image image;
+
+    public Vec2d getPosition() {
+        return position;
+    }
 
     public Background(GraphicsContext gc) {
         this.gc = gc;

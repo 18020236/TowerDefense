@@ -3,17 +3,26 @@ package Bullet;
 import Enemy.Enemy;
 import Game.GameEntity;
 import com.sun.javafx.geom.Vec2d;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 
-public abstract class Bullet extends GameEntity {
+public abstract class Bullet implements GameEntity {
     protected double speed ;
     protected int range;
     protected int damage;
     protected Vec2d towerPos;
     public boolean isMoving;
+    protected GraphicsContext gc;
+    protected Vec2d position;
+    protected Image image;
+
+    public Vec2d getPosition() {
+        return position;
+    }
 
     String path = "src/Resources/Audio/shot5.mp3";
 

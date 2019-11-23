@@ -2,16 +2,18 @@ package Tower;
 
 import Bullet.Bullet;
 import Enemy.Enemy;
-import Game.GameEntity;
+import Game.GameTile;
 import Initialization.ImageProcessing;
 import Initialization.Rotate;
 import com.sun.javafx.geom.Vec2d;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public abstract class Tower extends GameEntity {
+public abstract class Tower implements GameTile {
     protected int buyingCost;
     protected int refundValue;
     protected int range;
@@ -24,6 +26,14 @@ public abstract class Tower extends GameEntity {
     protected Queue<Enemy> activeEnemyList = new LinkedList<>();
     protected Enemy dangerousEnemy;
     Bullet bullet;
+
+    protected GraphicsContext gc;
+    protected Vec2d position;
+    protected Image image;
+
+    public Vec2d getPosition() {
+        return position;
+    }
     public Tower(Vec2d pos) {
         this.position = pos;
         this.lastAttackTime = 0;

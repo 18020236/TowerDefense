@@ -1,7 +1,7 @@
 package Scene;
 
 import Initialization.Config;
-import Resources.Audio.Audio;
+import Game.Audio;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -85,6 +85,21 @@ public class Menu implements SceneInterface {
     public static Button createButton(String text, double x, double y) {
         return createButton(text, x, y, DEFAULT_BUTTON_WIDTH, DEFAULT_BUTTON_HEIGHT, DEFAULT_FONT_SIZE);
     }
+
+//    public static ImageView createButtonImage(String path) {
+//        ImageView iv = new ImageView(path);
+//        root.getChildren().add(iv);
+//        iv.setOnMousePressed(new EventHandler<MouseEvent>() {
+//
+//            public void handle(MouseEvent evt) {
+//                iv.setImage(PRESSED_IMAGE);
+//            }
+//
+//        });
+//
+//        // TODO other event handlers like mouse up
+//
+//    }
 
     public static Button createButton(String text, double x, double y, double width, double height, int fontSize) {
         Button buttonUI = new Button();
