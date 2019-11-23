@@ -1,5 +1,6 @@
 package Scene;
 
+import Game.Audio;
 import Initialization.Config;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -8,8 +9,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.util.Duration;
+
+import java.io.File;
 
 /**
  * This class represents the Menu Scene from where the levels can be started.
@@ -29,6 +36,14 @@ public class Menu implements SceneInterface {
     private Scene menuScene;
     private Group root;
 
+    String path = "src/Resources/Audio/determination.mp3";
+
+    //Instantiating Media class
+    Media bg_audio = new Media(new File(path).toURI().toString());
+
+    //Instantiating MediaPlayer class
+    MediaPlayer bg_player = new MediaPlayer(bg_audio);
+    Audio clickAudio = new Audio("src/Resources/Audio/Click.mp3");
     /**
      * Constructor for Menu class
      * @param sceneManager SceneManager currently being used
@@ -42,7 +57,13 @@ public class Menu implements SceneInterface {
      */
     @Override
     public Scene init(int width, int height) {
-        Image image = new Image("Resources/Map/map.png");
+        bg_player.setAutoPlay(true);
+//        mediaPlayer.autoPlayProperty();
+        bg_player.setCycleCount(MediaPlayer.INDEFINITE);
+        bg_player.setStartTime(Duration.seconds(0));
+        bg_player.setStopTime(Duration.seconds(220));
+
+        Image image = new Image("Resources/Map/tower_defense_background.png");
         //Setting the image view
         ImageView imageView = new ImageView(image);
         imageView.fitWidthProperty();
@@ -54,16 +75,40 @@ public class Menu implements SceneInterface {
 
         root = new Group(imageView);
 
-        menuScene = new Scene(root, width, height, Color.AZURE);
+//        addStartButton("Guide");
 
-        addStartButton();
-//        addInstructionsButton();
+        menuScene = new Scene(root, width, height, Color.AZURE);
+        createButtonImage("Resources/Map/map.png", -49, 220);
+        createButtonImage("Resources/Map/map.png", 131, 220);
+        createButtonImage("Resources/Map/map.png", 311, 220);
 
         return menuScene;
     }
 
     public static Button createButton(String text, double x, double y) {
         return createButton(text, x, y, DEFAULT_BUTTON_WIDTH, DEFAULT_BUTTON_HEIGHT, DEFAULT_FONT_SIZE);
+    }
+
+    public void createButtonImage(String path, int x, int y) {
+        Image map = new Image(path);
+        ImageView map1 = new ImageView(map);
+
+        map1.setScaleX(0.3);
+        map1.setScaleY(0.3);
+        map1.setX(x);
+        map1.setY(y);
+
+        map1.setOnMousePressed(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent evt) {
+                clickAudio.play();
+                sceneManager.goToGameScene(sceneManager);
+                bg_player.stop();
+            }
+
+        });
+
+        // TODO other event handlers like mouse up
+        root.getChildren().add(map1);
     }
 
     public static Button createButton(String text, double x, double y, double width, double height, int fontSize) {
@@ -78,13 +123,15 @@ public class Menu implements SceneInterface {
         return buttonUI;
     }
 
-    private void addStartButton() {
-        Button startButton = createButton("Start Game", 270, 150);
+    private void addStartButton(String buttonName) {
+        Button startButton = createButton(buttonName, 100, 150);
 
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                clickAudio.play();
                 sceneManager.goToGameScene(sceneManager);
+                bg_player.stop();
             }
         });
 

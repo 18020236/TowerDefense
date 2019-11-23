@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a914a3f3-3569-496d-866c-e2743787bec1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bullet/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bullet/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bullet/NormalBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bullet/NormalBullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/Tower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Initialization/Background.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Initialization/Background.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Scene/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Scene/Menu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Scene/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Scene/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/Tower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/Tower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scene/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene/Menu.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,9 +46,9 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Resources\Map" />
+      <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Resources\Audio" />
       <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Initialization" />
       <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Resources" />
-      <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Resources\Audio" />
       <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Scene" />
     </key>
     <key name="CreateClassDialog.RecentsKey">

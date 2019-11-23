@@ -1,7 +1,6 @@
 package Scene;
 
 import Game.GameField;
-import Game.Player;
 import Initialization.Config;
 import Initialization.Control;
 import javafx.animation.KeyFrame;
@@ -128,7 +127,7 @@ public class SceneManager {
         stage.setScene( scene );
         Canvas canvas = new Canvas( Config.WIDTH, Config.HEIGHT );
         root.getChildren().add( canvas );
-        System.out.println(Player.getPlayer().getLives());
+//        System.out.println(Player.getPlayer().getLives());
 //        if (GameField.gameOver) {
 //            System.out.println("------------------------");
 //            root.getChildren().add(GameField.text("GAME OVER", 200, 300));

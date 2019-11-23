@@ -1,5 +1,6 @@
 package Initialization;
 
+import Game.Audio;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -13,7 +14,7 @@ public class Control {
     private Button button2;
     private VBox layout = new VBox();
     private Scene scene;
-
+    static Audio clickAudio = new Audio("src/Resources/Audio/Click.mp3");
     public Control(AnchorPane root) {
         button1 = new Button("Normal Tower",new ImageView(ImageProcessing.splits(15,11)));
         button1.setMinSize(100,50);
@@ -35,5 +36,7 @@ public class Control {
 
     public static void mouseClicked(MouseEvent mouseEvent) {
         System.out.println("YES");
+        clickAudio.stop();
+        clickAudio.play();
     }
 }

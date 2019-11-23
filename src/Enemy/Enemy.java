@@ -2,13 +2,15 @@ package Enemy;
 
 import Game.GameEntity;
 import Initialization.Config;
+import com.sun.javafx.geom.Vec2d;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 
-public abstract class Enemy extends GameEntity {
+public abstract class Enemy implements GameEntity {
     protected boolean alive = true;
     protected double health;
     protected double maxHealth;
@@ -16,6 +18,16 @@ public abstract class Enemy extends GameEntity {
     protected int armor;
     protected int prize;
     protected double dangerousLevel;
+
+    protected GraphicsContext gc;
+    protected Vec2d position;
+    protected Image image;
+
+    public Vec2d getPosition() {
+        return position;
+    }
+
+
     protected String name = "DEFAULT";
     protected ArrayList<Image> images = new ArrayList<>();
     protected ArrayList<Image> gunShipImages = new ArrayList<>();
