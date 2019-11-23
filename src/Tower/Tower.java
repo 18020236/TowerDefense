@@ -63,12 +63,16 @@ public abstract class Tower extends GameEntity {
         return speed;
     }
 
+    public double getPower() {
+        return power;
+    }
+
     public void update() {
         getTargetEnemy();
         if(dangerousEnemy!= null && this.canAttack()) {
             angleOfRotation = Rotate.setAngle(dangerousEnemy.getPosition(),position);
             bullet.shoot(dangerousEnemy);
-            dangerousEnemy.takeDamage(power);
+         //   dangerousEnemy.takeDamage(power);
             this.setLastAttackTime(System.currentTimeMillis());
         }
     }

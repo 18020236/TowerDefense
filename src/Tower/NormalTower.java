@@ -14,7 +14,7 @@ public class NormalTower extends Tower {
         this.reloadTime = newReloadTime;
         this.range = newRange;
         this.power = newPower;
-        this.speed = 8;
+        this.speed = 3;
         this.image = ImageProcessing.splits(19,8);
         this.activeEnemyList = activeEnemyList;
         bullet = new NormalBullet(this,gc);

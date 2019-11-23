@@ -7,7 +7,7 @@ import com.sun.javafx.geom.Vec2d;
 public abstract class Bullet extends GameEntity {
     protected double speed ;
     protected int range;
-    protected int damage;
+    protected double power;
     protected Vec2d towerPos;
     public boolean isMoving;
 
@@ -25,6 +25,7 @@ public abstract class Bullet extends GameEntity {
                 position.x+=vx;
                 position.y+=vy;
                 isMoving = false;
+                dangerousEnemy.takeDamage(power);
                 position=new Vec2d(towerPos);
             }
             else{
