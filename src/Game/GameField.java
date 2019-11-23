@@ -126,6 +126,7 @@ public class GameField extends AnimationTimer {
 
         //remove all the dead enemies and the enemies that have arrived at the exit
         for (Enemy s : enemiesToRemove) {
+            root.getChildren().remove(s.healthBar());
             activeEnemyQueue.remove(s);
         }
 
