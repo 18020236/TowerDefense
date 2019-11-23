@@ -14,7 +14,6 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.util.Duration;
 
 import java.io.File;
 
@@ -57,12 +56,11 @@ public class GameOver implements SceneInterface {
      */
     @Override
     public Scene init(int width, int height) {
-        bg_player.stop();
-        bg_player.setAutoPlay(true);
-//        mediaPlayer.autoPlayProperty();
-        bg_player.setCycleCount(MediaPlayer.INDEFINITE);
-        bg_player.setStartTime(Duration.seconds(0));
-        bg_player.setStopTime(Duration.seconds(220));
+//        bg_player.stop();
+//        bg_player.setAutoPlay(true);
+//        bg_player.setCycleCount(MediaPlayer.INDEFINITE);
+//        bg_player.setStartTime(Duration.seconds(0));
+//        bg_player.setStopTime(Duration.seconds(220));
 
         Image image = new Image("Resources/gameOver.jpg");
         //Setting the image view
@@ -86,10 +84,6 @@ public class GameOver implements SceneInterface {
         return menuScene;
     }
 
-    public static Button createButton(String text, double x, double y) {
-        return createButton(text, x, y, DEFAULT_BUTTON_WIDTH, DEFAULT_BUTTON_HEIGHT, DEFAULT_FONT_SIZE);
-    }
-
     public void createButtonImage(String path, int x, int y) {
         Image map = new Image(path);
         ImageView map1 = new ImageView(map);
@@ -102,7 +96,7 @@ public class GameOver implements SceneInterface {
         map1.setOnMousePressed(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent evt) {
                 clickAudio.play();
-                sceneManager.goToGameScene(sceneManager);
+                sceneManager.goToGameScene();
                 bg_player.stop();
             }
 
@@ -110,6 +104,10 @@ public class GameOver implements SceneInterface {
 
         // TODO other event handlers like mouse up
         root.getChildren().add(map1);
+    }
+
+    public static Button createButton(String text, double x, double y) {
+        return createButton(text, x, y, DEFAULT_BUTTON_WIDTH, DEFAULT_BUTTON_HEIGHT, DEFAULT_FONT_SIZE);
     }
 
     public static Button createButton(String text, double x, double y, double width, double height, int fontSize) {
@@ -131,7 +129,7 @@ public class GameOver implements SceneInterface {
             @Override
             public void handle(ActionEvent event) {
                 clickAudio.play();
-                sceneManager.goToGameScene(sceneManager);
+                sceneManager.goToGameScene();
                 bg_player.stop();
             }
         });

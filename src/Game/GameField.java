@@ -5,11 +5,15 @@ import Enemy.EnemyGenerator;
 import Initialization.Background;
 import Initialization.Config;
 import Scene.SceneManager;
-import Tower.NormalTower;
-import Tower.*;
+import Tower.SniperTower;
+import Tower.Tower;
 import com.sun.javafx.geom.Vec2d;
 import javafx.animation.AnimationTimer;
+import javafx.event.EventHandler;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -34,6 +38,7 @@ public class GameField extends AnimationTimer {
         this.root = root;
         this.stage = stage;
         road = new Background(gc);
+        gameOver = false;
         restartGame();
     }
 
@@ -68,6 +73,7 @@ public class GameField extends AnimationTimer {
     private Text textCash = new Text("");
     private Text textGameOver = new Text("GAME OVER");
 
+    ImageView restartButton = createButtonImage("Resources/Map/map.png", 131, 220);
     public void addEnemiesToActiveEnemyQueue() {
         tickCount++;
         if (tickCount > enemySpawnDelay) {
@@ -78,6 +84,18 @@ public class GameField extends AnimationTimer {
 
 
     public void restartGame() {
+        if (root.getChildren().contains(restartButton)){
+            root.getChildren().remove(restartButton);
+        }
+        if (root.getChildren().contains(textGameOver)){
+            root.getChildren().remove(textGameOver);
+        }
+        for (Enemy e: activeEnemyQueue){
+            root.getChildren().remove(e.healthBar());
+        }
+        towerList.clear();
+        enemyQueue.clear();
+        activeEnemyQueue.clear();
         currentLevel = startingLevel;
         Player.getPlayer().reset();
         waveIsInProgress = true;
@@ -86,11 +104,10 @@ public class GameField extends AnimationTimer {
         createEnemyQueueForLevel();
         gameOver = false;
         towerList.add(new SniperTower(gc,new Vec2d(15*32,10*32),activeEnemyQueue));
-        towerList.add(new MachineGunTower(gc,new Vec2d(8*32,8*32),activeEnemyQueue));
-        towerList.add(new NormalTower(gc, new Vec2d(4*32,4*32),activeEnemyQueue));
-        towerList.add(new MachineGunTower(gc,new Vec2d(13*32,4*32),activeEnemyQueue));
-        towerList.add(new NormalTower(gc,new Vec2d(3*32,11*32),activeEnemyQueue));
-
+//        towerList.add(new MachineGunTower(gc,new Vec2d(8*32,8*32),activeEnemyQueue));
+//        towerList.add(new NormalTower(gc, new Vec2d(4*32,4*32),activeEnemyQueue));
+//        towerList.add(new MachineGunTower(gc,new Vec2d(13*32,4*32),activeEnemyQueue));
+//        towerList.add(new NormalTower(gc,new Vec2d(3*32,11*32),activeEnemyQueue));
         bgAudio.playCycle(36);
     }
 
@@ -130,7 +147,7 @@ public class GameField extends AnimationTimer {
             activeEnemyQueue.remove(s);
         }
 
-        if (enemyQueue.size() == 0 && activeEnemyQueue.size() == 0) {
+        if (gameOver == false && enemyQueue.size() == 0 && activeEnemyQueue.size() == 0) {
 //            waveIsInProgress = false;
             currentLevel++;
             createEnemyQueueForLevel();
@@ -147,7 +164,7 @@ public class GameField extends AnimationTimer {
         if (waveIsInProgress) {
             if (enemyQueue.size() != 0) {
                 addEnemiesToActiveEnemyQueue();
-            } else if (enemyQueue.size() == 0 && activeEnemyQueue.size() == 0) {
+            } else if (gameOver == false && enemyQueue.size() == 0 && activeEnemyQueue.size() == 0) {
                 currentLevel++;
             }
             if (!gameOver) {
@@ -158,8 +175,9 @@ public class GameField extends AnimationTimer {
             }
         }
 
-        if (Player.getPlayer().getLives() <= 0) {
+        if (Player.getPlayer().getLives() <= 0 && gameOver == false) {
             System.out.println(Player.getPlayer().getLives() + " health ====> GAME OVER");
+            root.getChildren().add(restartButton);
             gameOver = true;
         }
     }
@@ -172,6 +190,29 @@ public class GameField extends AnimationTimer {
         text.setY(y);
         root.getChildren().remove(text);
         root.getChildren().add(text);
+    }
+
+    public ImageView createButtonImage(String path, int x, int y) {
+        Image map = new Image(path);
+        ImageView map1 = new ImageView(map);
+
+        map1.setScaleX(0.3);
+        map1.setScaleY(0.3);
+        map1.setX(x);
+        map1.setY(y);
+
+        map1.setOnMousePressed(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent evt) {
+//                clickAudio.play();
+                restartGame();
+                System.out.println(3);
+//                bg_player.stop();
+            }
+
+        });
+
+        // TODO other event handlers like mouse up
+        return map1;
     }
 
     public void draw() {
@@ -197,10 +238,10 @@ public class GameField extends AnimationTimer {
         drawText(textLevel, 20, 500, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT - 15, Color.BROWN);
 
         if (gameOver) {
-            enemyQueue.clear();
-            activeEnemyQueue.clear();
-            sceneManager = new SceneManager(stage, root);
-            sceneManager.goToGameOverScene(sceneManager);
+            root.getChildren().remove(textLives);
+            root.getChildren().remove(textLevel);
+            root.getChildren().remove(textCash);
+            drawText(textGameOver, 100, 80, 250, Color.RED);
         }
     }
 

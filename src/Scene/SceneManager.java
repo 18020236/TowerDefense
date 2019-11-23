@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -57,11 +56,44 @@ public class SceneManager {
     }
 
     public void goToGameOverScene(SceneManager sceneManager) {
-        animation.stop();
-        GameField.gameOver = false;
         GameOver gameOver = new GameOver(sceneManager);
         Scene gameOverScene = gameOver.init(Config.WIDTH, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT);
         stage.setScene(gameOverScene);
+//        GameOver gameOver = new GameOver(sceneManager);
+//        Scene gameOverScene = gameOver.init(Config.WIDTH, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT);
+        stage.setScene(gameOverScene);
+    }
+
+    public void goToGameScene() {
+        stage.setTitle( "Tower Defense" );
+
+        AnchorPane root = new AnchorPane();
+
+        Scene scene = new Scene( root , Config.WIDTH, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT);
+        stage.setScene( scene );
+        Canvas canvas = new Canvas( Config.WIDTH, Config.HEIGHT );
+        root.getChildren().add( canvas );
+//        System.out.println(Player.getPlayer().getLives());
+//        if (GameField.gameOver) {
+//            System.out.println("------------------------");
+//            root.getChildren().add(GameField.text("GAME OVER", 200, 300));
+//        }
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+        Control control = new Control(root);
+        scene.setOnMouseMoved(Control::mouseMoved);
+        scene.setOnMouseClicked(Control::mouseClicked);
+
+        GameField gameField = new GameField(gc, root, stage);
+        gameField.start();
+
+        stage.show();
+    }
+
+    private void setGameLoop(KeyFrame frame) {
+        animation = new Timeline();
+        animation.setCycleCount(Timeline.INDEFINITE);
+        animation.getKeyFrames().add(frame);
+        animation.play();
     }
 //    /**
 //     * Sets the scene to be the Instructions Scene
@@ -126,36 +158,5 @@ public class SceneManager {
 //     * Sets the scene to be the BossBattle Scene
 //     * @param sceneManager SceneManager currently being used
 //     */
-    public void goToGameScene(SceneManager sceneManager) {
-        stage.setTitle( "Tower Defense" );
 
-        AnchorPane root = new AnchorPane();
-
-        Scene scene = new Scene( root , Config.WIDTH, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT);
-        scene.setFill(Color.GRAY);
-        stage.setScene( scene );
-        Canvas canvas = new Canvas( Config.WIDTH, Config.HEIGHT );
-        root.getChildren().add( canvas );
-//        System.out.println(Player.getPlayer().getLives());
-//        if (GameField.gameOver) {
-//            System.out.println("------------------------");
-//            root.getChildren().add(GameField.text("GAME OVER", 200, 300));
-//        }
-        GraphicsContext gc = canvas.getGraphicsContext2D();
-        Control control = new Control(root);
-        scene.setOnMouseMoved(Control::mouseMoved);
-        scene.setOnMouseClicked(Control::mouseClicked);
-
-        GameField gameField= new GameField(gc, root, stage);
-        gameField.start();
-
-        stage.show();
-    }
-
-    private void setGameLoop(KeyFrame frame) {
-        animation = new Timeline();
-        animation.setCycleCount(Timeline.INDEFINITE);
-        animation.getKeyFrames().add(frame);
-        animation.play();
-    }
 }

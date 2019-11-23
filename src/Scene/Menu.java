@@ -101,7 +101,7 @@ public class Menu implements SceneInterface {
         map1.setOnMousePressed(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent evt) {
                 clickAudio.play();
-                sceneManager.goToGameScene(sceneManager);
+                sceneManager.goToGameScene();
                 bg_player.stop();
             }
 
@@ -130,7 +130,7 @@ public class Menu implements SceneInterface {
             @Override
             public void handle(ActionEvent event) {
                 clickAudio.play();
-                sceneManager.goToGameScene(sceneManager);
+                sceneManager.goToGameScene();
                 bg_player.stop();
             }
         });
