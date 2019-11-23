@@ -26,7 +26,7 @@ import java.io.File;
  * @author Daniel Chai (dhc10)
  * @version 1.0
  */
-public class Menu implements SceneInterface {
+public class GameOver implements SceneInterface {
     public static final String DEFAULT_FONT_FAMILY = "Verdana";
     public static final int DEFAULT_FONT_SIZE = 20;
     public static final double DEFAULT_BUTTON_WIDTH = 100;
@@ -48,7 +48,7 @@ public class Menu implements SceneInterface {
      * Constructor for Menu class
      * @param sceneManager SceneManager currently being used
      */
-    public Menu(SceneManager sceneManager) {
+    public GameOver(SceneManager sceneManager) {
         this.sceneManager = sceneManager;
     }
 
@@ -57,13 +57,14 @@ public class Menu implements SceneInterface {
      */
     @Override
     public Scene init(int width, int height) {
+        bg_player.stop();
         bg_player.setAutoPlay(true);
 //        mediaPlayer.autoPlayProperty();
         bg_player.setCycleCount(MediaPlayer.INDEFINITE);
         bg_player.setStartTime(Duration.seconds(0));
         bg_player.setStopTime(Duration.seconds(220));
 
-        Image image = new Image("Resources/Map/tower_defense_background.png");
+        Image image = new Image("Resources/gameOver.jpg");
         //Setting the image view
         ImageView imageView = new ImageView(image);
         imageView.fitWidthProperty();

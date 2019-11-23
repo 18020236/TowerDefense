@@ -4,6 +4,7 @@ import Enemy.Enemy;
 import Enemy.EnemyGenerator;
 import Initialization.Background;
 import Initialization.Config;
+import Scene.SceneManager;
 import Tower.NormalTower;
 import Tower.Tower;
 import com.sun.javafx.geom.Vec2d;
@@ -15,6 +16,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -22,12 +24,15 @@ import java.util.Queue;
 
 public class GameField extends AnimationTimer {
     protected GraphicsContext gc;
+    Stage stage;
     private final int startingLevel = 1;
-    protected AnchorPane root = new AnchorPane();
+    protected AnchorPane root;
+    SceneManager sceneManager;
 
-    public GameField(GraphicsContext gc, AnchorPane root) {
+    public GameField(GraphicsContext gc, AnchorPane root, Stage stage) {
         this.gc = gc;
         this.root = root;
+        this.stage = stage;
         road = new Background(gc);
         restartGame();
     }
@@ -91,6 +96,7 @@ public class GameField extends AnimationTimer {
     public void createEnemyQueueForLevel() {
         generator = new EnemyGenerator(currentLevel - 1);
         generator.createEnemyQueue(gc);
+        generator.RandomizeEnemyQueue();
         enemyQueue = generator.getCritterQueue();
 //        activeEnemyQueue = new LinkedList<Enemy>();
       //  activeEnemyQueue = new LinkedList<Enemy>();  HUHU
@@ -118,7 +124,6 @@ public class GameField extends AnimationTimer {
 
         //remove all the dead enemies and the enemies that have arrived at the exit
         for (Enemy s : enemiesToRemove) {
-            root.getChildren().remove(s.healthBar());
             activeEnemyQueue.remove(s);
         }
 
@@ -151,7 +156,7 @@ public class GameField extends AnimationTimer {
         }
 
         if (Player.getPlayer().getLives() <= 0) {
-            System.out.println(Player.getPlayer().getLives() + " het mau cmnr");
+            System.out.println(Player.getPlayer().getLives() + " health ====> GAME OVER");
             gameOver = true;
         }
     }
@@ -189,10 +194,10 @@ public class GameField extends AnimationTimer {
         drawText(textLevel, 20, 500, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT - 15, Color.BROWN);
 
         if (gameOver) {
-            root.getChildren().remove(textCash);
-            root.getChildren().remove(textLevel);
-            root.getChildren().remove(textLives);
-            drawText(textGameOver, 40, 200, 300, Color.RED);
+            enemyQueue.clear();
+            activeEnemyQueue.clear();
+            sceneManager = new SceneManager(stage, root);
+            sceneManager.goToGameOverScene(sceneManager);
         }
     }
 

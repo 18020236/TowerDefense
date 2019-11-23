@@ -52,10 +52,17 @@ public class SceneManager {
     public void goToMenuScene(SceneManager sceneManager) {
         animation.stop();
         Menu menu = new Menu(sceneManager);
-        Scene menuScene = menu.init(Config.WIDTH, Config.HEIGHT);
+        Scene menuScene = menu.init(Config.WIDTH, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT);
         stage.setScene(menuScene);
     }
 
+    public void goToGameOverScene(SceneManager sceneManager) {
+        animation.stop();
+        GameField.gameOver = false;
+        GameOver gameOver = new GameOver(sceneManager);
+        Scene gameOverScene = gameOver.init(Config.WIDTH, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT);
+        stage.setScene(gameOverScene);
+    }
 //    /**
 //     * Sets the scene to be the Instructions Scene
 //     * @param sceneManager SceneManager currently being used
@@ -139,7 +146,7 @@ public class SceneManager {
         scene.setOnMouseMoved(Control::mouseMoved);
         scene.setOnMouseClicked(Control::mouseClicked);
 
-        GameField gameField= new GameField(gc, root);
+        GameField gameField= new GameField(gc, root, stage);
         gameField.start();
 
         stage.show();
