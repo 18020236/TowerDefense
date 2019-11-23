@@ -1,7 +1,7 @@
 package Scene;
 
-import Initialization.Config;
 import Game.Audio;
+import Initialization.Config;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
@@ -74,10 +75,12 @@ public class Menu implements SceneInterface {
 
         root = new Group(imageView);
 
-        menuScene = new Scene(root, width, height, Color.AZURE);
+//        addStartButton("Guide");
 
-        addStartButton();
-//        addInstructionsButton();
+        menuScene = new Scene(root, width, height, Color.AZURE);
+        createButtonImage("Resources/Map/map.png", -49, 220);
+        createButtonImage("Resources/Map/map.png", 131, 220);
+        createButtonImage("Resources/Map/map.png", 311, 220);
 
         return menuScene;
     }
@@ -86,20 +89,27 @@ public class Menu implements SceneInterface {
         return createButton(text, x, y, DEFAULT_BUTTON_WIDTH, DEFAULT_BUTTON_HEIGHT, DEFAULT_FONT_SIZE);
     }
 
-//    public static ImageView createButtonImage(String path) {
-//        ImageView iv = new ImageView(path);
-//        root.getChildren().add(iv);
-//        iv.setOnMousePressed(new EventHandler<MouseEvent>() {
-//
-//            public void handle(MouseEvent evt) {
-//                iv.setImage(PRESSED_IMAGE);
-//            }
-//
-//        });
-//
-//        // TODO other event handlers like mouse up
-//
-//    }
+    public void createButtonImage(String path, int x, int y) {
+        Image map = new Image(path);
+        ImageView map1 = new ImageView(map);
+
+        map1.setScaleX(0.3);
+        map1.setScaleY(0.3);
+        map1.setX(x);
+        map1.setY(y);
+
+        map1.setOnMousePressed(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent evt) {
+                clickAudio.play();
+                sceneManager.goToGameScene(sceneManager);
+                bg_player.stop();
+            }
+
+        });
+
+        // TODO other event handlers like mouse up
+        root.getChildren().add(map1);
+    }
 
     public static Button createButton(String text, double x, double y, double width, double height, int fontSize) {
         Button buttonUI = new Button();
@@ -113,8 +123,8 @@ public class Menu implements SceneInterface {
         return buttonUI;
     }
 
-    private void addStartButton() {
-        Button startButton = createButton("Start Game", 270, 150);
+    private void addStartButton(String buttonName) {
+        Button startButton = createButton(buttonName, 100, 150);
 
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
