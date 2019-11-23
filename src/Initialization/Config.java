@@ -12,5 +12,7 @@ public class Config {
     public static final int START_POINT_X = -32;
 
     public static final int BLOOD_UNIT = 10;
+
+    public static final int PLAYER_BAR_HEIGHT = 45;
 }
 // horizontal 25 vertical 15

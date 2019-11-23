@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -123,7 +124,8 @@ public class SceneManager {
 
         AnchorPane root = new AnchorPane();
 
-        Scene scene = new Scene( root , Config.WIDTH, Config.HEIGHT);
+        Scene scene = new Scene( root , Config.WIDTH, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT);
+        scene.setFill(Color.GRAY);
         stage.setScene( scene );
         Canvas canvas = new Canvas( Config.WIDTH, Config.HEIGHT );
         root.getChildren().add( canvas );

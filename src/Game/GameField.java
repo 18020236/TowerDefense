@@ -3,6 +3,7 @@ package Game;
 import Enemy.Enemy;
 import Enemy.EnemyGenerator;
 import Initialization.Background;
+import Initialization.Config;
 import Tower.NormalTower;
 import Tower.Tower;
 import com.sun.javafx.geom.Vec2d;
@@ -10,6 +11,7 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -154,9 +156,9 @@ public class GameField extends AnimationTimer {
         }
     }
 
-    public void drawText(Text text, int size, double x, double y) {
+    public void drawText(Text text, int size, double x, double y, Paint value) {
         Font font = Font.font("Verdana", FontWeight.NORMAL, size);
-        text.setFill(Color.BLACK);
+        text.setFill(value);
         text.setFont(font);
         text.setX(x);
         text.setY(y);
@@ -176,21 +178,21 @@ public class GameField extends AnimationTimer {
             }
         }
 
-        lives = "LIVES: " + Player.getPlayer().getLives();
-        cash = "CASH: " + Player.getPlayer().getCredits();
-        level = "LEVEL: " + currentLevel;
+        lives = "LIVES " + Player.getPlayer().getLives();
+        cash = "CASH " + Player.getPlayer().getCredits();
+        level = "LEVEL " + currentLevel;
         textLives.setText(lives);
         textCash.setText(cash);
         textLevel.setText(level);
-        drawText(textLives, 20, 100, 300);
-        drawText(textCash, 20, 300, 300);
-        drawText(textLevel, 20, 500, 300);
+        drawText(textLives, 20, 100, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT - 15, Color.RED);
+        drawText(textCash, 20, 300, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT - 15, Color.GREEN);
+        drawText(textLevel, 20, 500, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT - 15, Color.BROWN);
 
         if (gameOver) {
             root.getChildren().remove(textCash);
             root.getChildren().remove(textLevel);
             root.getChildren().remove(textLives);
-            drawText(textGameOver, 40, 200, 300);
+            drawText(textGameOver, 40, 200, 300, Color.RED);
         }
     }
 
