@@ -16,7 +16,7 @@ public class SniperTower extends Tower{
         this.reloadTime = newReloadTime;
         this.range = newRange;
         this.power = newPower;
-        this.speed = 3;
+        this.speed = 4;
         this.image = ImageProcessing.splits(19,10);
         this.activeEnemyList = activeEnemyList;
         bullet = new SniperBullet(this,gc);
@@ -24,6 +24,6 @@ public class SniperTower extends Tower{
     private static int newBuyingCost = 300;
     private static int newRefundValue = 250;
     private static double newReloadTime = 0.0;
-    private static int newRange = 96;
+    private static int newRange = 90;
     private static double newPower = 0.4;
 }

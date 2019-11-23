@@ -17,7 +17,7 @@ public class MachineGunTower extends Tower {
         this.reloadTime = newReloadTime;
         this.range = newRange;
         this.power = newPower;
-        this.speed = 3;
+        this.speed = 5;
         this.activeEnemyList = activeEnemyList;
         this.image = ImageProcessing.splits(20,10);
         bullet = new MachineGunBullet(this,gc);
@@ -26,6 +26,6 @@ public class MachineGunTower extends Tower {
     private static int newBuyingCost = 200;
     private static int newRefundValue = 180;
     private static double newReloadTime = 0.0;
-    private static int newRange = 96;
+    private static int newRange = 110;
     private static double newPower = 0.4;
 }

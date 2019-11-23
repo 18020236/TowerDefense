@@ -4,6 +4,7 @@ import Enemy.Enemy;
 import Enemy.EnemyGenerator;
 import Initialization.Background;
 import Initialization.Config;
+import Tower.NormalTower;
 import Tower.*;
 import com.sun.javafx.geom.Vec2d;
 import javafx.animation.AnimationTimer;
@@ -79,7 +80,7 @@ public class GameField extends AnimationTimer {
         activeEnemyQueue = new LinkedList<Enemy>();
         createEnemyQueueForLevel();
         gameOver = false;
-        towerList.add(new SniperTower(gc,new Vec2d(15*32,8*32),activeEnemyQueue));
+        towerList.add(new SniperTower(gc,new Vec2d(15*32,10*32),activeEnemyQueue));
         towerList.add(new MachineGunTower(gc,new Vec2d(8*32,8*32),activeEnemyQueue));
         towerList.add(new NormalTower(gc, new Vec2d(4*32,4*32),activeEnemyQueue));
         towerList.add(new MachineGunTower(gc,new Vec2d(13*32,4*32),activeEnemyQueue));
