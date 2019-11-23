@@ -79,9 +79,11 @@ public class GameField extends AnimationTimer {
         activeEnemyQueue = new LinkedList<Enemy>();
         createEnemyQueueForLevel();
         gameOver = false;
-        towerList.add(new SniperTower(gc,new Vec2d(2*32,8*32),activeEnemyQueue));
+        towerList.add(new SniperTower(gc,new Vec2d(15*32,8*32),activeEnemyQueue));
         towerList.add(new MachineGunTower(gc,new Vec2d(8*32,8*32),activeEnemyQueue));
         towerList.add(new NormalTower(gc, new Vec2d(4*32,4*32),activeEnemyQueue));
+        towerList.add(new MachineGunTower(gc,new Vec2d(13*32,4*32),activeEnemyQueue));
+        towerList.add(new NormalTower(gc,new Vec2d(3*32,11*32),activeEnemyQueue));
 
         bgAudio.playCycle(36);
     }

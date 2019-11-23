@@ -19,7 +19,7 @@ public class SniperTower extends Tower{
         this.speed = 3;
         this.image = ImageProcessing.splits(19,10);
         this.activeEnemyList = activeEnemyList;
-        bullet = new NormalBullet(this,gc);
+        bullet = new SniperBullet(this,gc);
     }
     private static int newBuyingCost = 300;
     private static int newRefundValue = 250;

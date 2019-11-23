@@ -1,6 +1,6 @@
 package Tower;
 
-import Bullet.NormalBullet;
+import Bullet.MachineGunBullet;
 import Enemy.Enemy;
 import Initialization.ImageProcessing;
 import com.sun.javafx.geom.Vec2d;
@@ -20,7 +20,7 @@ public class MachineGunTower extends Tower {
         this.speed = 3;
         this.activeEnemyList = activeEnemyList;
         this.image = ImageProcessing.splits(20,10);
-        bullet = new NormalBullet(this,gc);
+        bullet = new MachineGunBullet(this,gc);
     }
 
     private static int newBuyingCost = 200;
