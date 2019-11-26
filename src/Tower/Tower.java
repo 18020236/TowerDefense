@@ -82,7 +82,6 @@ public abstract class Tower implements GameTile {
         if(dangerousEnemy!= null && this.canAttack()) {
             angleOfRotation = Rotate.setAngle(dangerousEnemy.getPosition(),position);
             bullet.shoot(dangerousEnemy);
-         //   dangerousEnemy.takeDamage(power);
             this.setLastAttackTime(System.currentTimeMillis());
         }
     }
@@ -93,11 +92,5 @@ public abstract class Tower implements GameTile {
         Color color = Color.RED;
         gc.setStroke(color);
         gc.strokeOval(position.x + 16-range , position.y + 16-range,range*2,range*2);
-       /* for (Enemy e : activeEnemyList) {
-            if (Vec2d.distance(e.getPosition().x, e.getPosition().y, position.x, position.y) <= range) {
-                gc.strokeLine(position.x + 16, position.y + 16, e.getPosition().x + 16, e.getPosition().y + 16);
-                break;
-            }
-        }*/
     }
 }

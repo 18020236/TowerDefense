@@ -10,20 +10,6 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
-/**
- * This class handles all the scene changes. In the whole game, there is only one Stage that is used.
- * That is why this class takes in the primaryStage as a parameter in the constructor. All the scene
- * changes are done on this stage. Because this stage is a saved state across the game, the same
- * SceneManager object has to be used throughout the game. The implication is that every public method
- * this class provides takes in a SceneManager object as a parameter. Each of these public methods
- * goes to a separate Scene. So from the Scene classes, to instigate a scene switch, any one of the
- * provided public methods can be called with the current SceneManager object passed in as a
- * parameter.
- *
- * @author Daniel Chai (dhc10)
- * @version 1.0
- */
 public class SceneManager {
     public static final int FRAMES_PER_SECOND = 60;
     public static final int MILLISECOND_DELAY = 1000 / FRAMES_PER_SECOND;
