@@ -1,5 +1,5 @@
 package Tower;
-import Bullet.*;
+import Bullet.SniperBullet;
 import Enemy.Enemy;
 import Initialization.ImageProcessing;
 import com.sun.javafx.geom.Vec2d;
@@ -19,11 +19,15 @@ public class SniperTower extends Tower{
         this.speed = 4;
         this.image = ImageProcessing.splits(19,10);
         this.activeEnemyList = activeEnemyList;
-        bullet = new SniperBullet(this,gc);
     }
     private static int newBuyingCost = 300;
     private static int newRefundValue = 250;
-    private static double newReloadTime = 0.0;
-    private static int newRange = 90;
-    private static double newPower = 0.4;
+    private static double newReloadTime = 3;
+    private static int newRange = 160;
+    private static double newPower = 2.4;
+
+    @Override
+    public void attack(Enemy targetEnemy) {
+        bullets.add(new SniperBullet(this, gc, targetEnemy));
+    }
 }

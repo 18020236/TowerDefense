@@ -2,9 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a914a3f3-3569-496d-866c-e2743787bec1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TDefense.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TDefense.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Bullet/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Bullet/Bullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Bullet/MachineGunBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Bullet/MachineGunBullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Bullet/NormalBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Bullet/NormalBullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Bullet/SniperBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Bullet/SniperBullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/GunShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/GunShip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Game/GameField$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Game/GameField$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/META-INF/TDefense.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/MachineGunTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/MachineGunTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/NormalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/NormalTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/SniperTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/SniperTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/Tower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/Tower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bullet/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bullet/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bullet/MachineGunBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bullet/MachineGunBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bullet/NormalBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bullet/NormalBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bullet/SniperBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bullet/SniperBullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tower/MachineGunTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/MachineGunTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/NormalTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tower/SniperTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/SniperTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/Tower.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +46,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1SCRVJZOLAXfW7QaEVtDBtYJMeN" />
@@ -31,10 +58,22 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -75,6 +114,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -88,8 +129,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571065614254</updated>
+      <workItem from="1574775532101" duration="5704000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
