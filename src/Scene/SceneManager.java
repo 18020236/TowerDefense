@@ -67,7 +67,7 @@ public class SceneManager {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         Control control = new Control(root);
         scene.setOnMouseMoved(Control::mouseMoved);
-        scene.setOnMouseClicked(Control::mouseClicked);
+//        scene.setOnMouseClicked(Control::mouseClicked);
 
         GameField gameField = new GameField(gc, root, stage);
         gameField.start();

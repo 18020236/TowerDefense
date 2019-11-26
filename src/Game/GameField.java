@@ -82,7 +82,9 @@ public class GameField extends AnimationTimer {
     private Text textCash = new Text("");
     private Text textGameOver = new Text("GAME OVER");
 
-    ImageView restartButton = createButtonImage("Resources/Map/map.png", 131, 220);
+    boolean isUpdate = true;
+
+    ImageView restartButton;
     public void addEnemiesToActiveEnemyQueue() {
         tickCount++;
         if (tickCount > enemySpawnDelay) {
@@ -182,11 +184,16 @@ public class GameField extends AnimationTimer {
 
 
     public void restartGame() {
+        isUpdate = true;
         if (root.getChildren().contains(restartButton)){
             root.getChildren().remove(restartButton);
         }
         if (root.getChildren().contains(textGameOver)){
             root.getChildren().remove(textGameOver);
+        }
+        //TODO
+        if (root.getChildren().contains(towerMenu)){
+            root.getChildren().remove(towerMenu);
         }
         for (Enemy e: activeEnemyQueue){
             root.getChildren().remove(e.healthBar());
@@ -277,7 +284,9 @@ public class GameField extends AnimationTimer {
 
         if (Player.getPlayer().getLives() <= 0 && gameOver == false) {
             System.out.println(Player.getPlayer().getLives() + " health ====> GAME OVER");
+            restartButton = createButtonImage("Resources/restart-button-png-1.png", 131, 220);
             root.getChildren().add(restartButton);
+//            isUpdate = false;
             gameOver = true;
         }
     }
@@ -315,6 +324,29 @@ public class GameField extends AnimationTimer {
         return map1;
     }
 
+    public ImageView createPauseButton(String path, int x, int y) {
+        Image pause = new Image(path);
+        ImageView pauseIV = new ImageView(pause);
+
+        pauseIV.setScaleX(0.3);
+        pauseIV.setScaleY(0.3);
+        pauseIV.setX(x);
+        pauseIV.setY(y);
+
+        pauseIV.setOnMousePressed(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent evt) {
+//                clickAudio.play();
+                isUpdate = false;
+                System.out.println(3);
+//                bg_player.stop();
+            }
+
+        });
+
+        // TODO other event handlers like mouse up
+        return pauseIV;
+    }
+
     public void draw() {
         road.draw();
         if (waveIsInProgress) {
@@ -348,7 +380,7 @@ public class GameField extends AnimationTimer {
 
     @Override
     public void handle(long now) {
-        update();
+        if (isUpdate) update();
         draw();
     }
 }
