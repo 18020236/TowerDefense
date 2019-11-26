@@ -201,10 +201,6 @@ public class GameField extends AnimationTimer {
         if (root.getChildren().contains(textGameOver)){
             root.getChildren().remove(textGameOver);
         }
-        //TODO
-       /* if (root.getChildren().contains(towerMenu)){
-            root.getChildren().remove(towerMenu);
-        }*/
         for (Enemy e: activeEnemyQueue){
             root.getChildren().remove(e.healthBar());
         }
@@ -218,7 +214,6 @@ public class GameField extends AnimationTimer {
         activeEnemyQueue = new LinkedList<Enemy>();
         createEnemyQueueForLevel();
         gameOver = false;
-       // createTowerMenu();
         addListener(stage);
         bgAudio.playCycle(36);
     }
