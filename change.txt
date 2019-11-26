@@ -1,0 +1,66 @@
+3877316#@#1574533024#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#Play Again
+b1063eb#@#1574525549#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#fix health bar
+9f85205#@#1574525379#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#pull
+2139678#@#1574525249#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#turn off test mode, add random enemy
+831f82e#@#1574513891#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#update towers' range & bullet
+4972b75#@#1574513110#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#update towers
+1233b44#@#1574512356#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#update
+9d09d03#@#1574510646#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#fix tower's speed
+e5bcd0f#@#1574508181#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#Player Bar
+f45a053#@#1574507887#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#Merge branch 'master' of https://github.com/18020236/TowerDefense
+691ce86#@#1574506960#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#select map
+dcfef4c#@#1574506722#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#update tower's speed
+b17c273#@#1574505339#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#Game Tile, Mountain, Road, Spawner, Target
+ffdc0d2#@#1574442913#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#Click Audio
+f7b294e#@#1574442617#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#audio class
+07a0440#@#1574397350#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#pull
+007efb7#@#1574396508#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#pull
+96681bc#@#1574388736#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#set tower's cycle
+1b7c7dc#@#1574278000#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#add Sources package, background sound
+1e269fa#@#1574273638#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#pull
+de008d5#@#1574273523#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#pull
+032fd2b#@#1574231000#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#change some tiny things
+63a52d7#@#1574187572#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#Fix map, add menu background
+464d6db#@#1574187223#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#Fix map, add menu background
+62fd2c0#@#1574183932#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#pull
+3d51e52#@#1574179913#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#shot each level (fixed)
+3037088#@#1574175750#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#fix healt bar
+4630aca#@#1574175176#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#for pull
+5c40dc1#@#1574174985#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#for pull
+7c570ec#@#1574159991#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#shoot ver 1.0
+a7f056a#@#1574154315#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#Merge branch 'master' of https://github.com/18020236/TowerDefense
+1690548#@#1574154057#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#commit for pull request
+f66bd64#@#1574079590#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#SceneManager, Menu
+36de450#@#1574073398#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#for pull
+91439e8#@#1574053534#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#StrokeOval
+0b2b51f#@#1574007565#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#turn off test mode
+0e25aa2#@#1574002906#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#commit for pull
+78e266b#@#1573995445#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#nearly shoot
+d76a3cc#@#1573922626#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#takeDamage()
+60d1846#@#1573914231#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#fix Text bug, test wave
+df37f63#@#1573903451#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#Health Bar
+159e462#@#1573836416#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#hhh
+3543648#@#1573836169#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#huhu
+9f5b67f#@#1573835193#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#Merge branch 'master' of https://github.com/18020236/TowerDefense
+27080ca#@#1573834193#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#commit
+0e66d58#@#1573833692#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#hai
+22b62f6#@#1573833101#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#Merge branch 'master' of https://github.com/18020236/TowerDefense
+8be2447#@#1573828256#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#commit for pull (required)
+5842205#@#1573827510#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#Update workspace.xml
+da4aa2b#@#1573827458#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#commit phát để đi tắm k =))
+6e52dfc#@#1573801754#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#Fix class Tower
+ef44496#@#1573752044#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#nothing
+b59bec6#@#1573751406#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#Merge branch 'master' of https://github.com/18020236/TowerDefense
+e26dbff#@#1573747763#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#fix conflix files
+70d6266#@#1573747306#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#Merge branch 'master' of https://github.com/18020236/TowerDefense
+1fb8763#@#1573745343#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#Draw text and health
+bbdc0db#@#1573737184#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#PlayerClass
+351ee68#@#1573725170#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#Add class Bullet for Tower
+9a23905#@#1573722389#@#chungle1504@gmail.com#@#chungle1504@gmail.com#@#Resize all the game
+09119ac#@#1573661784#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#Tower
+46468b5#@#1573640375#@#hhoanguet@gmail.com#@#hhoanguet@gmail.com#@#Test
+e394aeb#@#1573609229#@#18020236#@#18020236#@#Enemies by wave
+89ece25#@#1573572443#@#18020236#@#18020236#@#CritterGenerator_Class
+5ec88a3#@#1573568199#@#18020236#@#18020236#@#BossEnemy SmallerEnemy Initiate EnemyGenerator
+435dd1e#@#1573550960#@#18020236#@#18020236#@#Full Screen and GunShip
+8e1dea3#@#1573548125#@#18020236#@#18020236#@#initial commit
