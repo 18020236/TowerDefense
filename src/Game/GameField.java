@@ -126,7 +126,7 @@ public class GameField extends AnimationTimer {
             if(true) {
                 if(tower == null) {
                     tower = new ImageView(ImageProcessing.splits(20,10));
-                    whichTower = "Sniper";
+                    whichTower = "MachineGun";
                     tower.setFitWidth(32);
                     tower.setFitHeight(32);
                     tower.setX(stage.getWidth() - (mT.getPrefWidth()/2));
@@ -158,11 +158,22 @@ public class GameField extends AnimationTimer {
                 if(whichTower.equals("Normal")) {
                     towerList.add(new NormalTower(gc,new Vec2d(tempX,tempY),activeEnemyQueue));
                     whichTower = "";
+                    root.getChildren().remove(tower);
+                    tower = null;
                 }
 
                 if(whichTower.equals("Sniper")) {
                     towerList.add(new SniperTower(gc,new Vec2d(tempX,tempY),activeEnemyQueue));
                     whichTower = "";
+                    root.getChildren().remove(tower);
+                    tower = null;
+                }
+
+                if(whichTower.equals("MachineGun")) {
+                    towerList.add(new MachineGunTower(gc,new Vec2d(tempX,tempY),activeEnemyQueue));
+                    whichTower = "";
+                    root.getChildren().remove(tower);
+                    tower = null;
                 }
             }
         });
@@ -191,11 +202,6 @@ public class GameField extends AnimationTimer {
         createEnemyQueueForLevel();
         gameOver = false;
         createTowerMenu();
-        towerList.add(new SniperTower(gc,new Vec2d(15*32,10*32),activeEnemyQueue));
-        towerList.add(new MachineGunTower(gc,new Vec2d(8*32,8*32),activeEnemyQueue));
-        towerList.add(new NormalTower(gc, new Vec2d(4*32,4*32),activeEnemyQueue));
-        towerList.add(new MachineGunTower(gc,new Vec2d(13*32,4*32),activeEnemyQueue));
-        towerList.add(new NormalTower(gc,new Vec2d(3*32,11*32),activeEnemyQueue));
         bgAudio.playCycle(36);
         addListener(stage);
     }
@@ -215,11 +221,11 @@ public class GameField extends AnimationTimer {
     public void createEnemyQueueForLevel() {
         generator = new EnemyGenerator(currentLevel - 1);
         generator.createEnemyQueue(gc);
-        generator.RandomizeEnemyQueue();
+     //   generator.RandomizeEnemyQueue();
         enemyQueue = generator.getCritterQueue();
 //        activeEnemyQueue = new LinkedList<Enemy>();
-      //  activeEnemyQueue = new LinkedList<Enemy>();
-        activeEnemyQueue.add(enemyQueue.poll());
+        activeEnemyQueue = new LinkedList<Enemy>();
+      //  activeEnemyQueue.add(enemyQueue.poll());
     }
 
     public void updateEnemies() {
