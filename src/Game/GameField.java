@@ -45,6 +45,7 @@ public class GameField extends AnimationTimer {
         this.stage = stage;
         road = new Background(gc);
         gameOver = false;
+        createTowerMenu();
         restartGame();
     }
 
@@ -201,9 +202,9 @@ public class GameField extends AnimationTimer {
             root.getChildren().remove(textGameOver);
         }
         //TODO
-        if (root.getChildren().contains(towerMenu)){
+       /* if (root.getChildren().contains(towerMenu)){
             root.getChildren().remove(towerMenu);
-        }
+        }*/
         for (Enemy e: activeEnemyQueue){
             root.getChildren().remove(e.healthBar());
         }
@@ -217,7 +218,7 @@ public class GameField extends AnimationTimer {
         activeEnemyQueue = new LinkedList<Enemy>();
         createEnemyQueueForLevel();
         gameOver = false;
-        createTowerMenu();
+       // createTowerMenu();
         addListener(stage);
         bgAudio.playCycle(36);
     }
