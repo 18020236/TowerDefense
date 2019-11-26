@@ -101,7 +101,7 @@ public class GameField extends AnimationTimer {
     public void addListener(Stage stage) {
         // Listen to the click of the Tower Button
         nT.addEventFilter(MouseEvent.MOUSE_CLICKED, e ->{
-            if(true) {
+            if(Player.getPlayer().getCredits() >= 100) {
                 if (tower == null) {
                     tower = new ImageView(ImageProcessing.splits(19,8));
                     whichTower = "Normal";
@@ -115,9 +115,9 @@ public class GameField extends AnimationTimer {
             }
         } );
         sT.addEventFilter(MouseEvent.MOUSE_CLICKED, e -> {
-            if(true) {
+            if(Player.getPlayer().getCredits() >= 300) {
                 if(tower == null) {
-                    tower = new ImageView(ImageProcessing.splits(19,10));
+                    tower = new ImageView(ImageProcessing.splits(20,10));
                     whichTower = "Sniper";
                     tower.setFitWidth(32);
                     tower.setFitHeight(32);
@@ -130,9 +130,9 @@ public class GameField extends AnimationTimer {
         });
 
         mT.addEventFilter(MouseEvent.MOUSE_CLICKED, e -> {
-            if(true) {
+            if(Player.getPlayer().getCredits() >= 200) {
                 if(tower == null) {
-                    tower = new ImageView(ImageProcessing.splits(20,10));
+                    tower = new ImageView(ImageProcessing.splits(19,10));
                     whichTower = "MachineGun";
                     tower.setFitWidth(32);
                     tower.setFitHeight(32);
@@ -164,6 +164,7 @@ public class GameField extends AnimationTimer {
             if(tower != null) {
                 if(whichTower.equals("Normal")) {
                     towerList.add(new NormalTower(gc,new Vec2d(tempX,tempY),activeEnemyQueue));
+                    Player.getPlayer().addCredits(-100);
                     whichTower = "";
                     root.getChildren().remove(tower);
                     tower = null;
@@ -171,6 +172,7 @@ public class GameField extends AnimationTimer {
 
                 if(whichTower.equals("Sniper")) {
                     towerList.add(new SniperTower(gc,new Vec2d(tempX,tempY),activeEnemyQueue));
+                    Player.getPlayer().addCredits(-300);
                     whichTower = "";
                     root.getChildren().remove(tower);
                     tower = null;
@@ -178,6 +180,7 @@ public class GameField extends AnimationTimer {
 
                 if(whichTower.equals("MachineGun")) {
                     towerList.add(new MachineGunTower(gc,new Vec2d(tempX,tempY),activeEnemyQueue));
+                    Player.getPlayer().addCredits(-200);
                     whichTower = "";
                     root.getChildren().remove(tower);
                     tower = null;
@@ -215,14 +218,14 @@ public class GameField extends AnimationTimer {
         createEnemyQueueForLevel();
         gameOver = false;
         createTowerMenu();
-        bgAudio.playCycle(36);
         addListener(stage);
+        bgAudio.playCycle(36);
     }
 
     public void createTowerMenu() {
-        nT = new TowerMenu("Normal $20 ");
-        sT = new TowerMenu("Sniper $30 ");
-        mT = new TowerMenu("MachineGun $50 ");
+        nT = new TowerMenu("Normal $100 ");
+        sT = new TowerMenu("Sniper $300 ");
+        mT = new TowerMenu("MachineGun $200 ");
         towerMenu.getChildren().add(nT);
         towerMenu.getChildren().add(sT);
         towerMenu.getChildren().add(mT);
@@ -236,9 +239,7 @@ public class GameField extends AnimationTimer {
         generator.createEnemyQueue(gc);
      //   generator.RandomizeEnemyQueue();
         enemyQueue = generator.getCritterQueue();
-//        activeEnemyQueue = new LinkedList<Enemy>();
-        activeEnemyQueue = new LinkedList<Enemy>();
-      //  activeEnemyQueue.add(enemyQueue.poll());
+        activeEnemyQueue.add(enemyQueue.poll());
     }
 
     public void updateEnemies() {

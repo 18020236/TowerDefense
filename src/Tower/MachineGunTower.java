@@ -19,14 +19,14 @@ public class MachineGunTower extends Tower {
         this.power = newPower;
         this.speed = 5;
         this.activeEnemyList = activeEnemyList;
-        this.image = ImageProcessing.splits(20,10);
+        this.image = ImageProcessing.splits(19,10);
     }
 
     private static int newBuyingCost = 200;
     private static int newRefundValue = 180;
     private static double newReloadTime = 0.25;
     private static int newRange = 80;
-    private static double newPower = 0.4;
+    private static double newPower = 0.8;
 
     @Override
     public void attack(Enemy targetEnemy) {
