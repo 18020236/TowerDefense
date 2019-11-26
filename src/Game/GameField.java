@@ -1,5 +1,6 @@
 package Game;
 
+import Bullet.Bullet;
 import Enemy.Enemy;
 import Enemy.EnemyGenerator;
 import Initialization.Background;
@@ -62,6 +63,8 @@ public class GameField extends AnimationTimer {
     private static Queue<Enemy> enemyQueue = new LinkedList<Enemy>();
     public static Queue<Enemy> activeEnemyQueue = new LinkedList<Enemy>();
     private static ArrayList<Tower> towerList = new ArrayList<Tower>();
+    private static ArrayList<Bullet> bulletList = new ArrayList<Bullet>();
+
     private final int enemySpawnDelay = 50;
     private static boolean waveIsInProgress = true;
     static long tickCount = 0;

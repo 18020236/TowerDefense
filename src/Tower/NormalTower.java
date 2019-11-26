@@ -4,6 +4,7 @@ import Enemy.Enemy;
 import Initialization.ImageProcessing;
 import com.sun.javafx.geom.Vec2d;
 import javafx.scene.canvas.GraphicsContext;
+
 import java.util.Queue;
 public class NormalTower extends Tower {
     public NormalTower(GraphicsContext gc, Vec2d position, Queue<Enemy> activeEnemyList ) {
@@ -17,11 +18,15 @@ public class NormalTower extends Tower {
         this.speed = 3;
         this.image = ImageProcessing.splits(19,8);
         this.activeEnemyList = activeEnemyList;
-        bullet = new NormalBullet(this,gc);
     }
     private static int newBuyingCost = 100;
     private static int newRefundValue = 90;
-    private static double newReloadTime = 0.0;
-    private static int newRange = 70;
+    private static double newReloadTime = 1.5;
+    private static int newRange = 100;
     private static double newPower = 0.6;
+
+    @Override
+    public void attack(Enemy targetEnemy) {
+        bullets.add(new NormalBullet(this, gc, targetEnemy));
+    }
 }

@@ -10,6 +10,13 @@ import javafx.scene.media.MediaPlayer;
 import java.io.File;
 
 public abstract class Bullet implements GameEntity {
+    private boolean destroyed;
+
+    public boolean isDestroyed() {
+        return destroyed;
+    }
+
+
     protected double speed ;
     protected int range;
     protected double power;
@@ -18,6 +25,11 @@ public abstract class Bullet implements GameEntity {
     protected GraphicsContext gc;
     protected Vec2d position;
     protected Image image;
+    Enemy targetEnemy;
+
+    public Bullet(Enemy targetEnemy) {
+        this.targetEnemy = targetEnemy;
+    }
 
     public Vec2d getPosition() {
         return position;
@@ -28,12 +40,12 @@ public abstract class Bullet implements GameEntity {
     //Instantiating Media class
     Media shoot = new Media(new File(path).toURI().toString());
 
-    // REVIEW
-    public void shoot(Enemy dangerousEnemy) {
-        if (dangerousEnemy!= null) {
-            double d  = Vec2d.distance(position.x,position.y,dangerousEnemy.getPosition().x,dangerousEnemy.getPosition().y);
-            double dx = dangerousEnemy.getPosition().x - position.x;
-            double dy = dangerousEnemy.getPosition().y - position.y;
+
+    public void update() {
+        if (targetEnemy!= null) {
+            double d  = Vec2d.distance(position.x,position.y,targetEnemy.getPosition().x,targetEnemy.getPosition().y);
+            double dx = targetEnemy.getPosition().x - position.x;
+            double dy = targetEnemy.getPosition().y - position.y;
             double vx;
             double vy;
             if(d<speed){
@@ -42,8 +54,8 @@ public abstract class Bullet implements GameEntity {
                 position.x+=vx;
                 position.y+=vy;
                 isMoving = false;
-                dangerousEnemy.takeDamage(power);
-                position=new Vec2d(towerPos);
+                targetEnemy.takeDamage(power);
+                destroyed = true;
             }
             else{
                 vx=speed*dx/d;
@@ -52,7 +64,8 @@ public abstract class Bullet implements GameEntity {
                 position.y += vy;
                 isMoving = true;
             }
-
+        } else {
+            destroyed = true;
         }
     }
 

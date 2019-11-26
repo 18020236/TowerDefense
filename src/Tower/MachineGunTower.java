@@ -20,12 +20,16 @@ public class MachineGunTower extends Tower {
         this.speed = 5;
         this.activeEnemyList = activeEnemyList;
         this.image = ImageProcessing.splits(20,10);
-        bullet = new MachineGunBullet(this,gc);
     }
 
     private static int newBuyingCost = 200;
     private static int newRefundValue = 180;
-    private static double newReloadTime = 0.0;
-    private static int newRange = 110;
+    private static double newReloadTime = 0.25;
+    private static int newRange = 80;
     private static double newPower = 0.4;
+
+    @Override
+    public void attack(Enemy targetEnemy) {
+        bullets.add(new MachineGunBullet(this, gc, targetEnemy));
+    }
 }
