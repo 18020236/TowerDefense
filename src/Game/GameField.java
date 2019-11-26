@@ -202,8 +202,8 @@ public class GameField extends AnimationTimer {
         createEnemyQueueForLevel();
         gameOver = false;
         createTowerMenu();
-        bgAudio.playCycle(36);
         addListener(stage);
+        bgAudio.playCycle(36);
     }
 
     public void createTowerMenu() {
@@ -224,8 +224,8 @@ public class GameField extends AnimationTimer {
      //   generator.RandomizeEnemyQueue();
         enemyQueue = generator.getCritterQueue();
 //        activeEnemyQueue = new LinkedList<Enemy>();
-        activeEnemyQueue = new LinkedList<Enemy>();
-      //  activeEnemyQueue.add(enemyQueue.poll());
+ //       activeEnemyQueue = new LinkedList<Enemy>();
+        activeEnemyQueue.add(enemyQueue.poll());
     }
 
     public void updateEnemies() {

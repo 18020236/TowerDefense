@@ -23,5 +23,5 @@ public class NormalTower extends Tower {
     private static int newRefundValue = 90;
     private static double newReloadTime = 0.0;
     private static int newRange = 70;
-    private static double newPower = 0.4;
+    private static double newPower = 0.6;
 }
