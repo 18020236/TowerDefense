@@ -1,5 +1,6 @@
 package Game;
 
+import Bullet.Bullet;
 import Enemy.Enemy;
 import Enemy.EnemyGenerator;
 import Initialization.Background;
@@ -62,6 +63,8 @@ public class GameField extends AnimationTimer {
     private static Queue<Enemy> enemyQueue = new LinkedList<Enemy>();
     public static Queue<Enemy> activeEnemyQueue = new LinkedList<Enemy>();
     private static ArrayList<Tower> towerList = new ArrayList<Tower>();
+    private static ArrayList<Bullet> bulletList = new ArrayList<Bullet>();
+
     private final int enemySpawnDelay = 50;
     private static boolean waveIsInProgress = true;
     static long tickCount = 0;
@@ -85,6 +88,8 @@ public class GameField extends AnimationTimer {
     boolean isUpdate = true;
 
     ImageView restartButton;
+    ImageView pauseButton;
+
     public void addEnemiesToActiveEnemyQueue() {
         tickCount++;
         if (tickCount > enemySpawnDelay) {
@@ -185,9 +190,10 @@ public class GameField extends AnimationTimer {
 
     public void restartGame() {
         isUpdate = true;
-        if (root.getChildren().contains(restartButton)){
-            root.getChildren().remove(restartButton);
-        }
+        restartButton = createButtonImage("Resources/restart-button-png-1.png", 420, 405);
+        pauseButton = createPauseButton("Resources/pause.png", 520, 390);
+        root.getChildren().add(restartButton);
+        root.getChildren().add(pauseButton);
         if (root.getChildren().contains(textGameOver)){
             root.getChildren().remove(textGameOver);
         }
@@ -284,9 +290,7 @@ public class GameField extends AnimationTimer {
 
         if (Player.getPlayer().getLives() <= 0 && gameOver == false) {
             System.out.println(Player.getPlayer().getLives() + " health ====> GAME OVER");
-            restartButton = createButtonImage("Resources/restart-button-png-1.png", 131, 220);
-            root.getChildren().add(restartButton);
-//            isUpdate = false;
+            isUpdate = false;
             gameOver = true;
         }
     }
@@ -305,17 +309,15 @@ public class GameField extends AnimationTimer {
         Image map = new Image(path);
         ImageView map1 = new ImageView(map);
 
-        map1.setScaleX(0.3);
-        map1.setScaleY(0.3);
+        map1.setScaleX(0.2);
+        map1.setScaleY(0.2);
         map1.setX(x);
         map1.setY(y);
 
         map1.setOnMousePressed(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent evt) {
-//                clickAudio.play();
                 restartGame();
                 System.out.println(3);
-//                bg_player.stop();
             }
 
         });
@@ -328,19 +330,17 @@ public class GameField extends AnimationTimer {
         Image pause = new Image(path);
         ImageView pauseIV = new ImageView(pause);
 
-        pauseIV.setScaleX(0.3);
-        pauseIV.setScaleY(0.3);
+        pauseIV.setScaleX(0.2);
+        pauseIV.setScaleY(0.2);
         pauseIV.setX(x);
         pauseIV.setY(y);
 
         pauseIV.setOnMousePressed(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent evt) {
-//                clickAudio.play();
-                isUpdate = false;
-                System.out.println(3);
-//                bg_player.stop();
+                System.out.println("paused");
+                if (isUpdate) isUpdate = false;
+                else isUpdate = true;
             }
-
         });
 
         // TODO other event handlers like mouse up
@@ -365,15 +365,15 @@ public class GameField extends AnimationTimer {
         textLives.setText(lives);
         textCash.setText(cash);
         textLevel.setText(level);
-        drawText(textLives, 20, 100, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT - 15, Color.RED);
-        drawText(textCash, 20, 300, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT - 15, Color.GREEN);
-        drawText(textLevel, 20, 500, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT - 15, Color.BROWN);
+        drawText(textLives, 20, 280, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT - 15, Color.RED);
+        drawText(textCash, 20, 380, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT - 15, Color.GREEN);
+        drawText(textLevel, 20, 515, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT - 15, Color.BROWN);
 
         if (gameOver) {
             root.getChildren().remove(textLives);
             root.getChildren().remove(textLevel);
             root.getChildren().remove(textCash);
-            drawText(textGameOver, 100, 80, 250, Color.RED);
+            drawText(textGameOver, 100, 80, 180, Color.RED);
         }
     }
 

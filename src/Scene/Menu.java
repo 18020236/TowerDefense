@@ -78,10 +78,7 @@ public class Menu implements SceneInterface {
 //        addStartButton("Guide");
 
         menuScene = new Scene(root, width, height, Color.AZURE);
-        createButtonImage("Resources/Map/map.png", -49, 220);
-        createButtonImage("Resources/Map/map.png", 131, 220);
-        createButtonImage("Resources/Map/map.png", 311, 220);
-
+        createButtonImage("Resources/Map/map.png", 125, 240);
         return menuScene;
     }
 
@@ -93,8 +90,8 @@ public class Menu implements SceneInterface {
         Image map = new Image(path);
         ImageView map1 = new ImageView(map);
 
-        map1.setScaleX(0.3);
-        map1.setScaleY(0.3);
+        map1.setScaleX(0.4);
+        map1.setScaleY(0.4);
         map1.setX(x);
         map1.setY(y);
 

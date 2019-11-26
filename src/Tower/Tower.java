@@ -25,7 +25,7 @@ public abstract class Tower implements GameTile {
     protected double speed;
     protected Queue<Enemy> activeEnemyList = new LinkedList<>();
     protected Enemy dangerousEnemy;
-    Bullet bullet;
+    Queue<Bullet> bullets = new LinkedList<>();
 
     protected GraphicsContext gc;
     protected Vec2d position;
@@ -42,7 +42,7 @@ public abstract class Tower implements GameTile {
     }
 
     public void getTargetEnemy() {
-        if(!bullet.isMoving) {
+         {
             for (Enemy e : activeEnemyList) {
                 if (Vec2d.distance(e.getPosition().x, e.getPosition().y, position.x, position.y) <= range) {
                     dangerousEnemy = e;
@@ -77,18 +77,31 @@ public abstract class Tower implements GameTile {
         return power;
     }
 
+    public abstract void attack(Enemy targetEnemy);
+
     public void update() {
         getTargetEnemy();
-        if(dangerousEnemy!= null && this.canAttack()) {
+        if(dangerousEnemy!= null) {
             angleOfRotation = Rotate.setAngle(dangerousEnemy.getPosition(),position);
-            bullet.shoot(dangerousEnemy);
+        }
+        if(dangerousEnemy!= null && this.canAttack()) {
+            attack(dangerousEnemy);
             this.setLastAttackTime(System.currentTimeMillis());
+
+        }
+        while (!bullets.isEmpty() && bullets.peek().isDestroyed()) bullets.remove();
+        for (Bullet bullet : bullets) {
+            if (!bullet.isDestroyed())
+                bullet.update();
         }
     }
 
     public void draw() {
         gc.drawImage(ImageProcessing.rotate(image,angleOfRotation),position.x,position.y,32,32);
-        bullet.draw();;
+        for (Bullet bullet : bullets) {
+            if (!bullet.isDestroyed())
+                bullet.draw();
+        }
         Color color = Color.RED;
         gc.setStroke(color);
         gc.strokeOval(position.x + 16-range , position.y + 16-range,range*2,range*2);

@@ -45,6 +45,7 @@ public class SceneManager {
         GameOver gameOver = new GameOver(sceneManager);
         Scene gameOverScene = gameOver.init(Config.WIDTH, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT);
         stage.setScene(gameOverScene);
+        stage.setResizable(false);
 //        GameOver gameOver = new GameOver(sceneManager);
 //        Scene gameOverScene = gameOver.init(Config.WIDTH, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT);
         stage.setScene(gameOverScene);
@@ -52,7 +53,7 @@ public class SceneManager {
 
     public void goToGameScene() {
         stage.setTitle( "Tower Defense" );
-
+        stage.setResizable(false);
         AnchorPane root = new AnchorPane();
 
         Scene scene = new Scene( root , Config.WIDTH, Config.HEIGHT + Config.PLAYER_BAR_HEIGHT);
