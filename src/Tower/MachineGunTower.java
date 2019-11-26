@@ -19,7 +19,7 @@ public class MachineGunTower extends Tower {
         this.power = newPower;
         this.speed = 5;
         this.activeEnemyList = activeEnemyList;
-        this.image = ImageProcessing.splits(20,10);
+        this.image = ImageProcessing.splits(19,10);
     }
 
     private static int newBuyingCost = 200;

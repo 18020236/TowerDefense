@@ -17,7 +17,7 @@ public class SniperTower extends Tower{
         this.range = newRange;
         this.power = newPower;
         this.speed = 4;
-        this.image = ImageProcessing.splits(19,10);
+        this.image = ImageProcessing.splits(20,10);
         this.activeEnemyList = activeEnemyList;
     }
     private static int newBuyingCost = 300;

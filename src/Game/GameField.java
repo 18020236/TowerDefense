@@ -113,7 +113,7 @@ public class GameField extends AnimationTimer {
         sT.addEventFilter(MouseEvent.MOUSE_CLICKED, e -> {
             if(true) {
                 if(tower == null) {
-                    tower = new ImageView(ImageProcessing.splits(19,10));
+                    tower = new ImageView(ImageProcessing.splits(20,10));
                     whichTower = "Sniper";
                     tower.setFitWidth(32);
                     tower.setFitHeight(32);
@@ -128,7 +128,7 @@ public class GameField extends AnimationTimer {
         mT.addEventFilter(MouseEvent.MOUSE_CLICKED, e -> {
             if(true) {
                 if(tower == null) {
-                    tower = new ImageView(ImageProcessing.splits(20,10));
+                    tower = new ImageView(ImageProcessing.splits(19,10));
                     whichTower = "MachineGun";
                     tower.setFitWidth(32);
                     tower.setFitHeight(32);
@@ -226,8 +226,6 @@ public class GameField extends AnimationTimer {
         generator.createEnemyQueue(gc);
      //   generator.RandomizeEnemyQueue();
         enemyQueue = generator.getCritterQueue();
-//        activeEnemyQueue = new LinkedList<Enemy>();
- //       activeEnemyQueue = new LinkedList<Enemy>();
         activeEnemyQueue.add(enemyQueue.poll());
     }
 
