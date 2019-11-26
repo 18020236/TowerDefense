@@ -26,7 +26,7 @@ public class MachineGunTower extends Tower {
     private static int newRefundValue = 180;
     private static double newReloadTime = 0.25;
     private static int newRange = 80;
-    private static double newPower = 0.4;
+    private static double newPower = 0.8;
 
     @Override
     public void attack(Enemy targetEnemy) {
