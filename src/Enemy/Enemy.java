@@ -186,7 +186,7 @@ public abstract class Enemy implements GameEntity {
     }
 
     public void takeDamage(double damage){
-        health = health - damage/armor;
+        health = health - Math.max(0, damage - armor);
         if(health <= 0){
             alive = false;
         }

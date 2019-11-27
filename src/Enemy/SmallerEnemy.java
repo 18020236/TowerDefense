@@ -11,11 +11,11 @@ public class SmallerEnemy extends Enemy {
         this.gc = gc;
         name = "Smaller";
         position = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
-        health = 5;
-        maxHealth = 5;
+        health = 50;
+        maxHealth = 50;
 //        speed = (float) 1.6;
-        speed = (float) 0.5;
-        armor = 1;
+        speed = (float) 0.8;
+        armor = 0;
         prize = 20;
         image = ImageProcessing.splits(17,10);
         for(int i = 0; i < 4; i++)

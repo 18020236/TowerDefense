@@ -2,15 +2,19 @@ package Bullet;
 
 import Enemy.Enemy;
 import Game.GameEntity;
+import Initialization.ImageProcessing;
+import Initialization.Rotate;
 import com.sun.javafx.geom.Vec2d;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+
 import java.io.File;
 
 public abstract class Bullet implements GameEntity {
     private boolean destroyed;
+    private double angleOfRotation = 0;
 
     public boolean isDestroyed() {
         return destroyed;
@@ -43,6 +47,7 @@ public abstract class Bullet implements GameEntity {
 
     public void update() {
         if (targetEnemy!= null) {
+            angleOfRotation = Rotate.setAngle(position, targetEnemy.getPosition());
             double d  = Vec2d.distance(position.x,position.y,targetEnemy.getPosition().x,targetEnemy.getPosition().y);
             double dx = targetEnemy.getPosition().x - position.x;
             double dy = targetEnemy.getPosition().y - position.y;
@@ -81,7 +86,7 @@ public abstract class Bullet implements GameEntity {
 
     public void draw() {
         if (Vec2d.distance(towerPos.x, towerPos.y, position.x, position.y) >= 16) {
-            gc.drawImage(image, position.x, position.y,32,32);
+            gc.drawImage(ImageProcessing.rotate(image,angleOfRotation), position.x, position.y,32,32);
         }
     }
 }

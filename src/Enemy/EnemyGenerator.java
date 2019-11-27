@@ -20,19 +20,18 @@ public class EnemyGenerator {
     int[][] EnemyStream = {
             //{smaller, normal, gunship, tanker, boss}
             //{gunship, smaller, normal, tanker, boss} (test version)
-//            {2,1,0,0,0},
-            {20,8,10,10,3},
-            {5,2,0,0,0},
-            {6,2,1,0,0},
-            {6,3,2,2,1},
-            {6,3,3,3,1},
-            {8,4,4,4,1},
-            {9,5,5,5,2},
-            {10,6,6,6,2},
-            {12,6,6,7,2},
-            {15,6,8,8,2},
-            {16,6,9,9,3},
-            {20,8,10,10,3},
+            {2,1,0,0,0},
+            {5,3,2,0,0},
+            {5,3,3,1,0},
+            {6,3,5,2,1},
+            {6,3,5,4,1},
+            {8,3,8,5,1},
+            {9,3,10,6,2},
+            {10,3,10,6,2},
+            {12,3,12,7,2},
+            {15,3,12,8,2},
+            {16,3,15,10,3},
+            {20,3,15,11,3},
     };
     //automate critter list generation for 100 levels after hardcoded stream
     public int[][] addEnemyList(int lvlStart){
@@ -65,28 +64,28 @@ public class EnemyGenerator {
             }
         }
 
-        for(int x = 0; x < 5 ; x++)
+        for(int x = 0; x < 4 ; x++)
         {
             for(int y = 0; y < fullEnemyStream[level][x] ; y++){
-
-                Enemy c = addEnemy(gc, x);
-                EnemyQueue.add(c);
-
+                if (x != 1) {
+                    Enemy c = addEnemy(gc, x);
+                    EnemyQueue.add(c);
+                }
             }
         }
     }
 
     private Enemy addEnemy(GraphicsContext gc, int x){
-        if(x==0){
-            Enemy c = new GunShip(gc);
+        if(x==1){
+            Enemy c = new NormalEnemy(gc);
             return c;
         }
-        if(x==1){
+        if(x==0){
             Enemy c = new SmallerEnemy(gc);
             return c;
         }
         if(x==2){
-            Enemy c = new NormalEnemy(gc);
+            Enemy c = new GunShip(gc);
             return c;
         }
         if(x==3){

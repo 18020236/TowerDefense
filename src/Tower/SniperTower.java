@@ -24,7 +24,7 @@ public class SniperTower extends Tower{
     private static int newRefundValue = 250;
     private static double newReloadTime = 3;
     private static int newRange = 160;
-    private static double newPower = 2.4;
+    private static double newPower = 120;
 
     @Override
     public void attack(Enemy targetEnemy) {

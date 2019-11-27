@@ -23,7 +23,7 @@ public class NormalTower extends Tower {
     private static int newRefundValue = 90;
     private static double newReloadTime = 1.5;
     private static int newRange = 100;
-    private static double newPower = 0.6;
+    private static double newPower = 30;
 
     @Override
     public void attack(Enemy targetEnemy) {

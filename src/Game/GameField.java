@@ -45,6 +45,7 @@ public class GameField extends AnimationTimer {
         this.stage = stage;
         road = new Background(gc);
         gameOver = false;
+        createTowerMenu();
         restartGame();
     }
 
@@ -101,7 +102,7 @@ public class GameField extends AnimationTimer {
     public void addListener(Stage stage) {
         // Listen to the click of the Tower Button
         nT.addEventFilter(MouseEvent.MOUSE_CLICKED, e ->{
-            if(Player.getPlayer().getCredits() >= 100) {
+            if(Player.getPlayer().getCredits() >= 50) {
                 if (tower == null) {
                     tower = new ImageView(ImageProcessing.splits(19,8));
                     whichTower = "Normal";
@@ -115,7 +116,7 @@ public class GameField extends AnimationTimer {
             }
         } );
         sT.addEventFilter(MouseEvent.MOUSE_CLICKED, e -> {
-            if(Player.getPlayer().getCredits() >= 300) {
+            if(Player.getPlayer().getCredits() >= 150) {
                 if(tower == null) {
                     tower = new ImageView(ImageProcessing.splits(20,10));
                     whichTower = "Sniper";
@@ -130,7 +131,7 @@ public class GameField extends AnimationTimer {
         });
 
         mT.addEventFilter(MouseEvent.MOUSE_CLICKED, e -> {
-            if(Player.getPlayer().getCredits() >= 200) {
+            if(Player.getPlayer().getCredits() >= 100) {
                 if(tower == null) {
                     tower = new ImageView(ImageProcessing.splits(19,10));
                     whichTower = "MachineGun";
@@ -200,10 +201,6 @@ public class GameField extends AnimationTimer {
         if (root.getChildren().contains(textGameOver)){
             root.getChildren().remove(textGameOver);
         }
-        //TODO
-        if (!towerMenu.getChildren().contains(nT)){
-            createTowerMenu();
-        }
         for (Enemy e: activeEnemyQueue){
             root.getChildren().remove(e.healthBar());
         }
@@ -222,9 +219,9 @@ public class GameField extends AnimationTimer {
     }
 
     public void createTowerMenu() {
-        nT = new TowerMenu("Normal $100 ");
-        sT = new TowerMenu("Sniper $300 ");
-        mT = new TowerMenu("MachineGun $200 ");
+        nT = new TowerMenu("Normal $50 ");
+        sT = new TowerMenu("Sniper $150 ");
+        mT = new TowerMenu("MG $100 ");
         towerMenu.getChildren().add(nT);
         towerMenu.getChildren().add(sT);
         towerMenu.getChildren().add(mT);

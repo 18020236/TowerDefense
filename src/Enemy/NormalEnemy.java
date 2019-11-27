@@ -13,12 +13,11 @@ public class NormalEnemy extends Enemy {
         this.gc = gc;
         name = "Normal";
         position = new Vec2d(Config.START_POINT_X,Config.START_POINT_Y);
-        health = 2;
-        maxHealth = 2;
-//        speed = (float) 1.6;
-        speed = (float) 0.4;
-        armor = 8;
-        prize = 60;
+        health = 100;
+        maxHealth = 100;
+        speed = (float) 0.6;
+        armor = 3;
+        prize = 10;
         image = ImageProcessing.splits(16,10);
         for(int i = 0; i < 4; i++)
         {
