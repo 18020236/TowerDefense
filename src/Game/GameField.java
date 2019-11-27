@@ -221,7 +221,7 @@ public class GameField extends AnimationTimer {
     public void createTowerMenu() {
         nT = new TowerMenu("Normal $100 ");
         sT = new TowerMenu("Sniper $300 ");
-        mT = new TowerMenu("MachineGun $200 ");
+        mT = new TowerMenu("MG $200 ");
         towerMenu.getChildren().add(nT);
         towerMenu.getChildren().add(sT);
         towerMenu.getChildren().add(mT);

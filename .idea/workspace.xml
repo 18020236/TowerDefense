@@ -2,13 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a914a3f3-3569-496d-866c-e2743787bec1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Bullet/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Bullet/Bullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/BossEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/BossEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/EnemyGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/EnemyGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/GunShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/GunShip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/NormalEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/SmallerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/SmallerEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/TankerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/TankerEnemy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TDefense/Game/GameField$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Game/GameField$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TDefense/Game/GameField$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Game/GameField$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/MachineGunTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/MachineGunTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/NormalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/NormalTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Tower/SniperTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Tower/SniperTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bullet/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bullet/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/BossEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/BossEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/EnemyGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/EnemyGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enemy/GunShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/GunShip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/NormalEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/SmallerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/SmallerEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/TankerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/TankerEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tower/MachineGunTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/MachineGunTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/NormalTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tower/SniperTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/SniperTower.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +51,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="edit_towers" />
+        <entry key="$PROJECT_DIR$" value="be950ab9a252e11772d05266b137aaa29563d239" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,7 +69,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -62,19 +83,15 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Game" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Resources" />
       <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Resources\Map" />
       <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Resources\Audio" />
       <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Initialization" />
       <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Scene" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Resources" />
-      <recent name="C:\Users\chung\OneDrive\Documents\GitHub\TowerDefense\src\Resources\Map" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Game" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -102,8 +119,6 @@
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -118,6 +133,8 @@
       <option name="presentableId" value="Default" />
       <updated>1571065614254</updated>
       <workItem from="1574775532101" duration="5704000" />
+      <workItem from="1574802814764" duration="157000" />
+      <workItem from="1574802976968" duration="1298000" />
     </task>
     <servers />
   </component>
@@ -136,9 +153,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="finish fixing towers" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish fixing towers" />
   </component>
 </project>
