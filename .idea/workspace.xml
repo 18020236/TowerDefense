@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a914a3f3-3569-496d-866c-e2743787bec1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TDefense/Enemy/GunShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Enemy/GunShip.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TDefense/Game/GameField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enemy/GunShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/GunShip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameField.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

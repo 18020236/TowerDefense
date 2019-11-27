@@ -377,7 +377,6 @@ public class GameField extends AnimationTimer {
         }
     }
 
-
     @Override
     public void handle(long now) {
         if (isUpdate) update();
