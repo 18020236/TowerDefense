@@ -66,7 +66,6 @@ public class Background implements GameEntity{
             }
 
         System.out.print("\n");
-        //sc.close();
         return a;
     }
 

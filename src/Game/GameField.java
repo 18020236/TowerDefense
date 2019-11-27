@@ -7,11 +7,7 @@ import Initialization.Background;
 import Initialization.Config;
 import Initialization.ImageProcessing;
 import Scene.SceneManager;
-import Tower.MachineGunTower;
-import Tower.NormalTower;
-import Tower.SniperTower;
-import Tower.Tower;
-import Tower.TowerMenu;
+import Tower.*;
 import com.sun.javafx.geom.Vec2d;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
@@ -99,7 +95,19 @@ public class GameField extends AnimationTimer {
         }
     }
 
+    public boolean canPlaceTowerHere(int x, int y) {
+        if((y==12 || y==13) && x>=0 && x<= 13) return false;
+        if((y==12 || y==13) && x>=20 && x<=24) return false;
+        if((y==1  || y ==2) && x>=2 && x<=21) return false;
+        if((y==6 || y==7) && x>=2 && x<=13) return false;
+        if((x==12 || x==13) && y>=6 && y<=13) return false;
+        if((x==2 || x==3) && y>=1 && y<=7) return false;
+        if((x==20 || x==21) && y>=3 && y<= 13 ) return false;
+        return true;
+    }
+
     public void addListener(Stage stage) {
+
         // Listen to the click of the Tower Button
         nT.addEventFilter(MouseEvent.MOUSE_CLICKED, e ->{
             if(Player.getPlayer().getCredits() >= 50) {
@@ -156,16 +164,17 @@ public class GameField extends AnimationTimer {
                 tempY = e.getY() - (tower.getFitHeight() / 2);
                 tower.setX(e.getX() - (tower.getFitWidth() / 2));
                 tower.setY(e.getY() - (tower.getFitHeight() / 2));
-
             }
         });
 
         // PLACES THE TOWER ON THE CLICKED POSITION
         stage.getScene().addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
-            if(tower != null) {
+            int xForCheck =  (int)((Math.round(tempX)+16)/ Config.LENGTH_IMAGE);
+            int yForCheck =  (int)((Math.round(tempY)+16)/ Config.LENGTH_IMAGE);
+            if(tower != null && canPlaceTowerHere(xForCheck,yForCheck) ) {
                 if(whichTower.equals("Normal")) {
                     towerList.add(new NormalTower(gc,new Vec2d(tempX,tempY),activeEnemyQueue));
-                    Player.getPlayer().addCredits(-100);
+                    Player.getPlayer().addCredits(-50);
                     whichTower = "";
                     root.getChildren().remove(tower);
                     tower = null;
@@ -173,7 +182,7 @@ public class GameField extends AnimationTimer {
 
                 if(whichTower.equals("Sniper")) {
                     towerList.add(new SniperTower(gc,new Vec2d(tempX,tempY),activeEnemyQueue));
-                    Player.getPlayer().addCredits(-300);
+                    Player.getPlayer().addCredits(-150);
                     whichTower = "";
                     root.getChildren().remove(tower);
                     tower = null;
@@ -181,7 +190,7 @@ public class GameField extends AnimationTimer {
 
                 if(whichTower.equals("MachineGun")) {
                     towerList.add(new MachineGunTower(gc,new Vec2d(tempX,tempY),activeEnemyQueue));
-                    Player.getPlayer().addCredits(-200);
+                    Player.getPlayer().addCredits(-100);
                     whichTower = "";
                     root.getChildren().remove(tower);
                     tower = null;

@@ -182,7 +182,6 @@ public abstract class Enemy implements GameEntity {
         move(map);
         dangerousLevel += speed;
         healthBar.setValue((double)this.getHealth()/maxHealth, position.x, position.y);
-//        healthBar.setValue(0.65, position.x, position.y);
     }
 
     public void takeDamage(double damage){
